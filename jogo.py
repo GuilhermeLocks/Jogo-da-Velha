@@ -423,23 +423,32 @@ while True:
                 elif linha_33 == '9':
                     linha_33 = 'o'
                     jogadas_diponiveis.remove(9)
-            if linha_11 == 'x' or linha_13 == 'x' or linha_31 == 'x' or linha_33 == 'o':
+            elif linha_11 == 'x' or linha_13 == 'x' or linha_31 == 'x' or linha_33 == 'o':
                     if linha_22 == '5':
                         linha_22 = 'o'
                         jogadas_diponiveis.remove(5)
-
-
-
-
-
-
-
-
-
-
-
-
-        jogada_computador += 1
+        jogada_computador = 1
+        if jogada_computador == 1:
+            jogada_computador = jogadas_diponiveis[random.randint(0, (len(jogadas_diponiveis)) - 1)]
+            jogadas_diponiveis.remove(jogada_computador)
+            if jogada_computador == 1:
+                linha_11 = 'o'
+            elif jogada_computador == 2:
+                linha_12 = 'o'
+            elif jogada_computador == 3:
+                linha_13 = 'o'
+            elif jogada_computador == 4:
+                linha_21 = 'o'
+            elif jogada_computador == 5:
+                linha_22 = 'o'
+            elif jogada_computador == 6:
+                linha_23 = 'o'
+            elif jogada_computador == 7:
+                linha_31 = 'o'
+            elif jogada_computador == 8:
+                linha_32 = 'o'
+            elif jogada_computador == 9:
+                linha_33 = 'o'
 #####
     # verifica se alguem ganhou
     if linha_11 == linha_12 == linha_13:
@@ -498,7 +507,6 @@ while True:
         elif linha_13 == 'o':
             result = 'o'
             break
-    jogo -= 1
 print('-'*30)
 if result == 'x':
     print('jogo ganho')
