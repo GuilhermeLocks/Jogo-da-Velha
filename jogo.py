@@ -12,8 +12,11 @@ linha_33 = '9'
 result = ''
 jogada_computador = 0
 jogo = 0
+
 while True:
+
     #jogo
+
     print('-'*30)
     print('         JOGO DA VELHA          ')
     print('-'*30)
@@ -37,7 +40,9 @@ while True:
                 print('Essa posição ja esta oculpada, tente novamente')
         else:
             print('Jogada invalida tente novamente')
+
     # realiza a jogada
+
     for c in range(1, 10):
         if jogada == c:
             if c in jogadas_diponiveis:
@@ -70,6 +75,7 @@ while True:
                     jogadas_diponiveis.remove(9)
 
     # verifica se alguem ganhou
+
     if linha_11 == linha_12 == linha_13:
         if linha_11 == 'x':
             result = 'x'
@@ -275,8 +281,6 @@ while True:
                 result = 'o'
                 break
 
-###### jogada para o computador ganhar <
-
 ###### jogada para o computador não perder
 
     if jogo == 0:
@@ -401,9 +405,9 @@ while True:
                 linha_13 = 'o'
                 jogadas_diponiveis.remove(3)
                 jogo += 1
-#####
 
 ##### jogada computador
+    
     if jogo == 0:
         if jogada_computador == 0:
             if linha_22 == 'x':
