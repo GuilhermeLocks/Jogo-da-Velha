@@ -61,7 +61,6 @@ while True:
         linha_33 = 'x'
 
     # verifica se alguem ganhou
-
     if linha_11 == linha_12 == linha_13 == 'x':
         result = 'x'
         break
@@ -111,263 +110,202 @@ while True:
         result = 'o'
         break
 
-    ###### jogada para o computador ganhar >
-    if jogo == 0:
-        if linha_11 == 'o' and linha_13 == 'o' and linha_12 == '2':
-            linha_12 = 'o'
-            jogadas_diponiveis.remove(2)
-            result = 'o'
-            break
-        elif linha_11 == 'o' and linha_12 == 'o' and linha_13 == '3':
-            linha_13 = 'o'
-            jogadas_diponiveis.remove(3)
-            result = 'o'
-            break
-        elif linha_12 == 'o' and linha_13 == 'o' and linha_11 == '1':
-            linha_11 = 'o'
-            jogadas_diponiveis.remove(1)
-            result = 'o'
-            break
-        elif linha_21 == 'o' and linha_23 == 'o' and linha_22 == '2':
-            linha_22 = 'o'
-            jogadas_diponiveis.remove(5)
-            result = 'o'
-            break
-        elif linha_21 == 'o' and linha_22 == 'o' and linha_23 == '6':
-            linha_23 = 'o'
-            jogadas_diponiveis.remove(6)
-            result = 'o'
-            break
-        elif linha_22 == 'o' and linha_23 == 'o' and linha_21 == '4':
-            linha_21 = 'o'
-            jogadas_diponiveis.remove(4)
-            result = 'o'
-            break
-        elif linha_31 == 'o' and linha_33 == 'o' and linha_32 == '8':
-            linha_32 = 'o'
-            jogadas_diponiveis.remove(8)
-            result = 'o'
-            break
-        elif linha_31 == 'o' and linha_32 == 'o' and linha_33 == '9':
-            linha_33 = 'o'
-            jogadas_diponiveis.remove(9)
-            result = 'o'
-            break
-        elif linha_32 == 'o' and linha_33 == 'o' and linha_31 == '7':
-            linha_31 = 'o'
-            jogadas_diponiveis.remove(7)
-            result = 'o'
-            break
-        elif linha_11 == 'o' and linha_31 == 'o' and linha_21 == '4':
-            linha_21 = 'o'
-            jogadas_diponiveis.remove(4)
-            result = 'o'
-            break
-        elif linha_11 == 'o' and linha_21 == 'o' and linha_31 == '7':
-            linha_31 = 'o'
-            jogadas_diponiveis.remove(7)
-            result = 'o'
-            break
-        elif linha_21 == 'o' and linha_31 == 'o' and linha_11 == '1':
-            linha_11 = 'o'
-            jogadas_diponiveis.remove(1)
-            result = 'o'
-            break
-        elif linha_12 == 'o' and linha_32 == 'o':
-            if linha_22 == '5':
-                linha_22 = 'o'
-                jogadas_diponiveis.remove(5)
-                result = 'o'
-                break
-        elif linha_12 == 'o' and linha_22 == 'o':
-            if linha_32 == '8':
-                linha_32 = 'o'
-                jogadas_diponiveis.remove(8)
-                result = 'o'
-                break
-        elif linha_22 == 'o' and linha_32 == 'o':
-            if linha_12 == '2':
-                linha_12 = 'o'
-                jogadas_diponiveis.remove(2)
-                result = 'o'
-                break
-        elif linha_13 == 'o' and linha_33 == 'o':
-            if linha_23 == '6':
-                linha_23 = 'o'
-                jogadas_diponiveis.remove(6)
-                result = 'o'
-                break
-        elif linha_13 == 'o' and linha_23 == 'o':
-            if linha_33 == '9':
-                linha_33 = 'o'
-                jogadas_diponiveis.remove(9)
-                result = 'o'
-                break
-        elif linha_23 == 'o' and linha_33 == 'o':
-            if linha_13 == '3':
-                linha_13 = 'o'
-                jogadas_diponiveis.remove(3)
-                result = 'o'
-                break
-        elif linha_11 == 'o' and linha_33 == 'o':
-            if linha_22 == '5':
-                linha_22 = 'o'
-                jogadas_diponiveis.remove(5)
-                result = 'o'
-                break
-        elif linha_11 == 'o' and linha_22 == 'o':
-            if linha_33 == '9':
-                linha_33 = 'o'
-                jogadas_diponiveis.remove(9)
-                result = 'o'
-                break
-        elif linha_22 == 'o' and linha_33 == 'o':
-            if linha_11 == '1':
-                linha_11 = 'o'
-                jogadas_diponiveis.remove(1)
-                result = 'o'
-                break
-        elif linha_13 == 'o' and linha_31 == 'o':
-            if linha_22 == '5':
-                linha_22 = 'o'
-                jogadas_diponiveis.remove(5)
-                result = 'o'
-                break
-        elif linha_13 == 'o' and linha_22 == 'o':
-            if linha_31 == '7':
-                linha_31 = 'o'
-                jogadas_diponiveis.remove(7)
-                result = 'o'
-                break
-        elif linha_22 == 'o' and linha_31 == 'o':
-            if linha_13 == '3':
-                linha_13 = 'o'
-                jogadas_diponiveis.remove(3)
-                result = 'o'
-                break
+    # jogada para o computador ganhar >
+    if linha_11 == 'o' and linha_13 == 'o' and linha_12 == '2':
+        linha_12 = 'o'
+        result = 'o'
+        break
+    elif linha_11 == 'o' and linha_12 == 'o' and linha_13 == '3':
+        linha_13 = 'o'
+        result = 'o'
+        break
+    elif linha_12 == 'o' and linha_13 == 'o' and linha_11 == '1':
+        linha_11 = 'o'
+        result = 'o'
+        break
+    elif linha_21 == 'o' and linha_23 == 'o' and linha_22 == '2':
+        linha_22 = 'o'
+        result = 'o'
+        break
+    elif linha_21 == 'o' and linha_22 == 'o' and linha_23 == '6':
+        linha_23 = 'o'
+        result = 'o'
+        break
+    elif linha_22 == 'o' and linha_23 == 'o' and linha_21 == '4':
+        linha_21 = 'o'
+        result = 'o'
+        break
+    elif linha_31 == 'o' and linha_33 == 'o' and linha_32 == '8':
+        linha_32 = 'o'
+        result = 'o'
+        break
+    elif linha_31 == 'o' and linha_32 == 'o' and linha_33 == '9':
+        linha_33 = 'o'
+        result = 'o'
+        break
+    elif linha_32 == 'o' and linha_33 == 'o' and linha_31 == '7':
+        linha_31 = 'o'
+        result = 'o'
+        break
+    elif linha_11 == 'o' and linha_31 == 'o' and linha_21 == '4':
+        linha_21 = 'o'
+        result = 'o'
+        break
+    elif linha_11 == 'o' and linha_21 == 'o' and linha_31 == '7':
+        linha_31 = 'o'
+        result = 'o'
+        break
+    elif linha_21 == 'o' and linha_31 == 'o' and linha_11 == '1':
+        linha_11 = 'o'
+        result = 'o'
+        break
+    elif linha_12 == 'o' and linha_32 == 'o' and linha_22 == '5':
+        linha_22 = 'o'
+        result = 'o'
+        break
+    elif linha_12 == 'o' and linha_22 == 'o' and linha_32 == '8':
+        linha_32 = 'o'
+        result = 'o'
+        break
+    elif linha_22 == 'o' and linha_32 == 'o' and linha_12 == '2':
+        linha_12 = 'o'
+        result = 'o'
+        break
+    elif linha_13 == 'o' and linha_33 == 'o' and linha_23 == '6':
+        linha_23 = 'o'
+        result = 'o'
+        break
+    elif linha_13 == 'o' and linha_23 == 'o' and linha_33 == '9':
+        linha_33 = 'o'
+        result = 'o'
+        break
+    elif linha_23 == 'o' and linha_33 == 'o' and linha_13 == '3':
+        linha_13 = 'o'
+        result = 'o'
+        break
+    elif linha_11 == 'o' and linha_33 == 'o' and linha_22 == '5':
+        linha_22 = 'o'
+        result = 'o'
+        break
+    elif linha_11 == 'o' and linha_22 == 'o' and linha_33 == '9':
+        linha_33 = 'o'
+        result = 'o'
+        break
+    elif linha_22 == 'o' and linha_33 == 'o' and linha_11 == '1':
+        linha_11 = 'o'
+        result = 'o'
+        break
+    elif linha_13 == 'o' and linha_31 == 'o' and linha_22 == '5':
+        linha_22 = 'o'
+        result = 'o'
+        break
+    elif linha_13 == 'o' and linha_22 == 'o' and linha_31 == '7':
+        linha_31 = 'o'
+        result = 'o'
+        break
+    elif linha_22 == 'o' and linha_31 == 'o' and linha_13 == '3':
+        linha_13 = 'o'
+        result = 'o'
+        break
 
     # jogada para o computador não perder
     if jogo == 0:
-        if linha_11 == 'x' and linha_13 == 'x':
-            if linha_12 == '2':
-                linha_12 = 'o'
-                jogadas_diponiveis.remove(2)
-                jogo += 1
-        elif linha_11 == 'x' and linha_12 == 'x':
-            if linha_13 == '3':
-                linha_13 = 'o'
-                jogadas_diponiveis.remove(3)
-                jogo += 1
-        elif linha_12 == 'x' and linha_13 == 'x':
-            if linha_11 == '1':
-                linha_11 = 'o'
-                jogadas_diponiveis.remove(1)
-                jogo += 1
-        elif linha_21 == 'x' and linha_23 == 'x':
-            if linha_22 == '2':
-                linha_22 = 'o'
-                jogadas_diponiveis.remove(5)
-                jogo += 1
-        elif linha_21 == 'x' and linha_22 == 'x':
-            if linha_23 == '6':
-                linha_23 = 'o'
-                jogadas_diponiveis.remove(6)
-                jogo += 1
-        elif linha_22 == 'x' and linha_23 == 'x':
-            if linha_21 == '4':
-                linha_21 = 'o'
-                jogadas_diponiveis.remove(4)
-                jogo += 1
-        elif linha_31 == 'x' and linha_33 == 'x':
-            if linha_32 == '8':
-                linha_32 = 'o'
-                jogadas_diponiveis.remove(8)
-                jogo += 1
-        elif linha_31 == 'x' and linha_32 == 'x':
-            if linha_33 == '9':
-                linha_33 = 'o'
-                jogadas_diponiveis.remove(9)
-                jogo += 1
-        elif linha_32 == 'x' and linha_33 == 'x':
-            if linha_31 == '7':
-                linha_31 = 'o'
-                jogadas_diponiveis.remove(7)
-                jogo += 1
-        elif linha_11 == 'x' and linha_31 == 'x':
-            if linha_21 == '4':
-                linha_21 = 'o'
-                jogadas_diponiveis.remove(4)
-                jogo += 1
-        elif linha_11 == 'x' and linha_21 == 'x':
-            if linha_31 == '7':
-                linha_31 = 'o'
-                jogadas_diponiveis.remove(7)
-                jogo += 1
-        elif linha_21 == 'x' and linha_31 == 'x':
-            if linha_11 == '1':
-                linha_11 = 'o'
-                jogadas_diponiveis.remove(1)
-                jogo += 1
-        elif linha_12 == 'x' and linha_32 == 'x':
-            if linha_22 == '5':
-                linha_22 = 'o'
-                jogadas_diponiveis.remove(5)
-                jogo += 1
-        elif linha_12 == 'x' and linha_22 == 'x':
-            if linha_32 == '8':
-                linha_32 = 'o'
-                jogadas_diponiveis.remove(8)
-                jogo += 1
-        elif linha_22 == 'x' and linha_32 == 'x':
-            if linha_12 == '2':
-                linha_12 = 'o'
-                jogadas_diponiveis.remove(2)
-                jogo += 1
-        elif linha_13 == 'x' and linha_33 == 'x':
-            if linha_23 == '6':
-                linha_23 = 'o'
-                jogadas_diponiveis.remove(6)
-                jogo += 1
-        elif linha_13 == 'x' and linha_23 == 'x':
-            if linha_33 == '9':
-                linha_33 = 'o'
-                jogadas_diponiveis.remove(9)
-                jogo += 1
-        elif linha_23 == 'x' and linha_33 == 'x':
-            if linha_13 == '3':
-                linha_13 = 'o'
-                jogadas_diponiveis.remove(3)
-                jogo += 1
-        elif linha_11 == 'x' and linha_33 == 'x':
-            if linha_22 == '5':
-                linha_22 = 'o'
-                jogadas_diponiveis.remove(5)
-                jogo += 1
-        elif linha_11 == 'x' and linha_22 == 'x':
-            if linha_33 == '9':
-                linha_33 = 'o'
-                jogadas_diponiveis.remove(9)
-                jogo += 1
-        elif linha_22 == 'x' and linha_33 == 'x':
-            if linha_11 == '1':
-                linha_11 = 'o'
-                jogadas_diponiveis.remove(1)
-                jogo += 1
-        elif linha_13 == 'x' and linha_31 == 'x':
-            if linha_22 == '5':
-                linha_22 = 'o'
-                jogadas_diponiveis.remove(5)
-                jogo += 1
-        elif linha_13 == 'x' and linha_22 == 'x':
-            if linha_31 == '7':
-                linha_31 = 'o'
-                jogadas_diponiveis.remove(7)
-                jogo += 1
-        elif linha_22 == 'x' and linha_31 == 'x':
-            if linha_13 == '3':
-                linha_13 = 'o'
-                jogadas_diponiveis.remove(3)
-                jogo += 1
+        if linha_11 == 'x' and linha_13 == 'x' and linha_12 == '2':
+            linha_12 = 'o'
+            jogadas_diponiveis.remove(2)
+            jogo += 1
+        elif linha_11 == 'x' and linha_12 == 'x' and linha_13 == '3':
+            linha_13 = 'o'
+            jogadas_diponiveis.remove(3)
+            jogo += 1
+        elif linha_12 == 'x' and linha_13 == 'x' and linha_11 == '1':
+            linha_11 = 'o'
+            jogadas_diponiveis.remove(1)
+            jogo += 1
+        elif linha_21 == 'x' and linha_23 == 'x' and linha_22 == '2':
+            linha_22 = 'o'
+            jogadas_diponiveis.remove(5)
+            jogo += 1
+        elif linha_21 == 'x' and linha_22 == 'x' and linha_23 == '6':
+            linha_23 = 'o'
+            jogadas_diponiveis.remove(6)
+            jogo += 1
+        elif linha_22 == 'x' and linha_23 == 'x' and linha_21 == '4':
+            linha_21 = 'o'
+            jogadas_diponiveis.remove(4)
+            jogo += 1
+        elif linha_31 == 'x' and linha_33 == 'x' and linha_32 == '8':
+            linha_32 = 'o'
+            jogadas_diponiveis.remove(8)
+            jogo += 1
+        elif linha_31 == 'x' and linha_32 == 'x' and linha_33 == '9':
+            linha_33 = 'o'
+            jogadas_diponiveis.remove(9)
+            jogo += 1
+        elif linha_32 == 'x' and linha_33 == 'x' and linha_31 == '7':
+            linha_31 = 'o'
+            jogadas_diponiveis.remove(7)
+            jogo += 1
+        elif linha_11 == 'x' and linha_31 == 'x' and linha_21 == '4':
+            linha_21 = 'o'
+            jogadas_diponiveis.remove(4)
+            jogo += 1
+        elif linha_11 == 'x' and linha_21 == 'x' and linha_31 == '7':
+            linha_31 = 'o'
+            jogadas_diponiveis.remove(7)
+            jogo += 1
+        elif linha_21 == 'x' and linha_31 == 'x' and linha_11 == '1':
+            linha_11 = 'o'
+            jogadas_diponiveis.remove(1)
+            jogo += 1
+        elif linha_12 == 'x' and linha_32 == 'x' and linha_22 == '5':
+            linha_22 = 'o'
+            jogadas_diponiveis.remove(5)
+            jogo += 1
+        elif linha_12 == 'x' and linha_22 == 'x' and linha_32 == '8':
+            linha_32 = 'o'
+            jogadas_diponiveis.remove(8)
+            jogo += 1
+        elif linha_22 == 'x' and linha_32 == 'x' and linha_12 == '2':
+            linha_12 = 'o'
+            jogadas_diponiveis.remove(2)
+            jogo += 1
+        elif linha_13 == 'x' and linha_33 == 'x' and linha_23 == '6':
+            linha_23 = 'o'
+            jogadas_diponiveis.remove(6)
+            jogo += 1
+        elif linha_13 == 'x' and linha_23 == 'x' and linha_33 == '9':
+            linha_33 = 'o'
+            jogadas_diponiveis.remove(9)
+            jogo += 1
+        elif linha_23 == 'x' and linha_33 == 'x' and linha_13 == '3':
+            linha_13 = 'o'
+            jogadas_diponiveis.remove(3)
+            jogo += 1
+        elif linha_11 == 'x' and linha_33 == 'x' and linha_22 == '5':
+            linha_22 = 'o'
+            jogadas_diponiveis.remove(5)
+            jogo += 1
+        elif linha_11 == 'x' and linha_22 == 'x' and linha_33 == '9':
+            linha_33 = 'o'
+            jogadas_diponiveis.remove(9)
+            jogo += 1
+        elif linha_22 == 'x' and linha_33 == 'x' and linha_11 == '1':
+            linha_11 = 'o'
+            jogadas_diponiveis.remove(1)
+            jogo += 1
+        elif linha_13 == 'x' and linha_31 == 'x' and linha_22 == '5':
+            linha_22 = 'o'
+            jogadas_diponiveis.remove(5)
+            jogo += 1
+        elif linha_13 == 'x' and linha_22 == 'x' and linha_31 == '7':
+            linha_31 = 'o'
+            jogadas_diponiveis.remove(7)
+            jogo += 1
+        elif linha_22 == 'x' and linha_31 == 'x' and linha_13 == '3':
+            linha_13 = 'o'
+            jogadas_diponiveis.remove(3)
+            jogo += 1
 
     # jogada computador
     if jogo == 0:
@@ -376,21 +314,25 @@ while True:
                 if linha_13 == '3':
                     linha_13 = 'o'
                     jogadas_diponiveis.remove(3)
+                    jogada_computador += 1
                 elif linha_11 == '1':
                     linha_11 = 'o'
                     jogadas_diponiveis.remove(1)
+                    jogada_computador += 1
                 elif linha_31 == '7':
                     linha_31 = 'o'
                     jogadas_diponiveis.remove(7)
+                    jogada_computador += 1
                 elif linha_33 == '9':
                     linha_33 = 'o'
                     jogadas_diponiveis.remove(9)
+                    jogada_computador += 1
             elif linha_11 == 'x' or linha_13 == 'x' or linha_31 == 'x' or linha_33 == 'o':
                 if linha_22 == '5':
                     linha_22 = 'o'
                     jogadas_diponiveis.remove(5)
-        jogada_computador = 1
-        if jogada_computador == 1:
+                    jogada_computador += 1
+        if jogada_computador == 0:
             jogada_computador = jogadas_diponiveis[random.randint(0, (len(jogadas_diponiveis)) - 1)]
             jogadas_diponiveis.remove(jogada_computador)
             if jogada_computador == 1:
