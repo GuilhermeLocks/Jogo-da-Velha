@@ -61,6 +61,7 @@ while True:
         linha_33 = 'x'
 
     # verifica se alguem ganhou
+
     if linha_11 == linha_12 == linha_13 == 'x':
         result = 'x'
         break
@@ -466,6 +467,7 @@ if result == 'x':
     print('jogo ganho')
 elif result == 'o':
     print('jogo perdido')
+
 print('-' * 30)
 print('         JOGO DA VELHA          ')
 print('-' * 30)
