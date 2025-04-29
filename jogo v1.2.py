@@ -12,15 +12,13 @@ linha_33 = '9'
 import random
 result = ''
 while True:
-    print('-' * 30)
-    print('         JOGO DA VELHA          ')
-    print('-' * 30)
+    print('-'* 30, '\n         JOGO DA VELHA          ', '\n'+'-' * 30)
     print('''
-            {}  |  {}  |  {}
-          -----------------
-            {}  |  {}  |  {}
-          -----------------
-            {}  |  {}  |  {}
+          {}  |  {}  |  {}
+        -----------------
+          {}  |  {}  |  {}
+        -----------------
+          {}  |  {}  |  {}
     '''.format(linha_11, linha_12, linha_13, linha_21, linha_22, linha_23, linha_31, linha_32, linha_33))
     print('-' * 30)
 ########## recebe jogada
@@ -377,14 +375,12 @@ if result == 'x':
     print('jogo ganho')
 elif result == 'o':
     print('jogo perdido')
-print('-' * 30)
-print('         JOGO DA VELHA          ')
-print('-' * 30)
+print('-'* 30, '\n         JOGO DA VELHA          ', '\n'+'-' * 30)
 print('''
-        {}  |  {}  |  {}
-      -----------------
-        {}  |  {}  |  {}
-      -----------------
-        {}  |  {}  |  {}
+          {}  |  {}  |  {}
+        -----------------
+          {}  |  {}  |  {}
+        -----------------
+          {}  |  {}  |  {}
 '''.format(linha_11, linha_12, linha_13, linha_21, linha_22, linha_23, linha_31, linha_32, linha_33))
 print('-' * 30)
