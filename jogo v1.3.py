@@ -1,0 +1,127 @@
+import random
+jogos = 0
+jogada_computador = 0
+jogadas_diponiveis = ['x', 1, 2, 3, 4, 5, 6, 7, 8, 9]
+########################################## O JOGO #################################################
+
+print('''------------------------------
+         JOGO DA VELHA          
+------------------------------
+
+        {}  |  {}  |  {}
+       ------------------
+        {}  |  {}  |  {}
+       ------------------
+        {}  |  {}  |  {}
+
+------------------------------
+'''.format(jogadas_diponiveis[1], jogadas_diponiveis[2], jogadas_diponiveis[3], jogadas_diponiveis[4],
+           jogadas_diponiveis[5], jogadas_diponiveis[6], jogadas_diponiveis[7], jogadas_diponiveis[8],
+           jogadas_diponiveis[9]))
+def jogo(jogada):
+########################################## REALIZA A JOGADA JO JOGADOR #################################################
+    if jogada == 1:
+        jogadas_diponiveis[1] = 'x'
+    if jogada == 2:
+        jogadas_diponiveis[2] = 'x'
+    if jogada == 3:
+        jogadas_diponiveis[3] = 'x'
+    if jogada == 4:
+        jogadas_diponiveis[4] = 'x'
+    if jogada == 5:
+        jogadas_diponiveis[5] = 'x'
+    if jogada == 6:
+        jogadas_diponiveis[6] = 'x'
+    if jogada == 7:
+        jogadas_diponiveis[7] = 'x'
+    if jogada == 8:
+        jogadas_diponiveis[8] = 'x'
+    if jogada == 9:
+        jogadas_diponiveis[9] = 'x'
+########################################## O JOGO #################################################
+    tabulerio = ('''
+------------------------------
+         JOGO DA VELHA          
+------------------------------
+
+        {}  |  {}  |  {}
+       ------------------
+        {}  |  {}  |  {}
+       ------------------
+        {}  |  {}  |  {}
+
+------------------------------
+'''.format(jogadas_diponiveis[1], jogadas_diponiveis[2], jogadas_diponiveis[3], jogadas_diponiveis[4], jogadas_diponiveis[5], jogadas_diponiveis[6] ,jogadas_diponiveis[7] ,jogadas_diponiveis[8], jogadas_diponiveis[9]))
+    return tabulerio
+while True:
+##########################################JOGADA#################################################
+    while True:
+        jogada = input('Qual sua jogada? ')
+        if jogada.isnumeric() == True:
+            jogada = int(jogada)
+            if jogada in jogadas_diponiveis:
+                jogadas_diponiveis.remove(jogada)
+                jogadas_diponiveis.insert(jogada, 'x')
+                break
+            else:
+                print('Essa posição ja esta oculpada, tente novamente')
+        else:
+            print('Jogada invalida tente novamente')
+    print(jogo(jogada))
+##########################################JOGADA_COMPUTADOR#######################################
+
+    if jogos == 0:
+        if jogada_computador == 0:
+            if jogadas_diponiveis[5] == 'x':
+                if jogadas_diponiveis[3] == '3':
+                    jogadas_diponiveis[3] = 'o'
+                    jogo_1 = 3
+                    jogada_computador += 1
+                elif jogadas_diponiveis[1] == '1':
+                    jogadas_diponiveis[1] = 'o'
+                    jogo_1 = 1
+                    jogada_computador += 1
+                elif jogadas_diponiveis[7] == '7':
+                    jogadas_diponiveis[7] = 'o'
+                    jogo_1 = 7
+                    jogada_computador += 1
+                elif jogadas_diponiveis[9] == '9':
+                    jogadas_diponiveis[9] = 'o'
+                    jogo_1 = 9
+                    jogada_computador += 1
+            elif jogadas_diponiveis[1] == 'x' or jogadas_diponiveis[3] == 'x' or jogadas_diponiveis[7] == 'x' or jogadas_diponiveis[9] == 'o':
+                if jogadas_diponiveis[5] == '5':
+                    jogadas_diponiveis[5] = 'o'
+                    jogo_1 = 5
+                    jogada_computador += 1
+        if jogada_computador == 0:
+            jogada_computador = jogadas_diponiveis[random.randint(1, (len(jogadas_diponiveis)) - 1)]
+            if jogada_computador == 1:
+                jogadas_diponiveis[1] = 'o'
+                jogo_1 = 1
+            elif jogada_computador == 2:
+                jogadas_diponiveis[2] = 'o'
+                jogo_1 = 2
+            elif jogada_computador == 3:
+                jogadas_diponiveis[3] = 'o'
+                jogo_1 = 3
+            elif jogada_computador == 4:
+                jogadas_diponiveis[4] = 'o'
+                jogo_1 = 4
+            elif jogada_computador == 5:
+                jogadas_diponiveis[5] = 'o'
+                jogo_1 = 5
+            elif jogada_computador == 6:
+                jogadas_diponiveis[6] = 'o'
+                jogo_1 = 6
+            elif jogada_computador == 7:
+                jogadas_diponiveis[7] = 'o'
+                jogo_1 = 7
+            elif jogada_computador == 8:
+                jogadas_diponiveis[8] = 'o'
+                jogo_1 = 8
+            elif jogada_computador == 9:
+                jogadas_diponiveis[9] = 'o'
+                jogo_1 = 9
+    print('Computador jogou {}'.format(jogo_1))
+    print(jogo(jogada))
