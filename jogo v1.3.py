@@ -2,8 +2,8 @@ import random
 jogos = jogo_1 = 0
 jogada_computador = 0
 jogadas_diponiveis = ['x', 1, 2, 3, 4, 5, 6, 7, 8, 9]
-########################################## O JOGO #################################################
-print('''------------------------------
+print('''
+------------------------------
          JOGO DA VELHA          
 ------------------------------
 
@@ -15,7 +15,7 @@ print('''------------------------------
 
 ------------------------------
 '''.format(jogadas_diponiveis[1], jogadas_diponiveis[2], jogadas_diponiveis[3], jogadas_diponiveis[4],
-jogadas_diponiveis[5], jogadas_diponiveis[6], jogadas_diponiveis[7], jogadas_diponiveis[8],jogadas_diponiveis[9]))
+jogadas_diponiveis[5], jogadas_diponiveis[6] ,jogadas_diponiveis[7] ,jogadas_diponiveis[8], jogadas_diponiveis[9]))
 ########################################## O JOGO #################################################
 def jogo(jogada):
     tabulerio = ('''
@@ -67,103 +67,152 @@ while True:
         if jogada == 9:
             jogadas_diponiveis[9] = 'x'
 ############################################ jogada para o computador ganhar ###########################################
-    if jogadas_diponiveis[1] == jogadas_diponiveis[3] and jogadas_diponiveis[2] == 2:
+    if jogadas_diponiveis[1] == jogadas_diponiveis[3] == 'o' and jogadas_diponiveis[2] == 2:
         jogadas_diponiveis[2] = 'o'
-        if jogadas_diponiveis[3] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[1] == jogadas_diponiveis[2] == 'o' and jogadas_diponiveis[3] == 3:
         jogadas_diponiveis[3] = 'o'
-        if jogadas_diponiveis[2] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[2] == jogadas_diponiveis[3] == 'o' and jogadas_diponiveis[1] == 1:
         jogadas_diponiveis[1] = 'o'
-        if jogadas_diponiveis[3] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[4] == jogadas_diponiveis[6] == 'o' and jogadas_diponiveis[5] == 2:
         jogadas_diponiveis[5] = 'o'
-        if jogadas_diponiveis[6] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[4] == jogadas_diponiveis[5] == 'o' and jogadas_diponiveis[6] == 6:
         jogadas_diponiveis[6] = 'o'
-        if jogadas_diponiveis[5] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[5] == jogadas_diponiveis[6] == 'o' and jogadas_diponiveis[4] == 4:
         jogadas_diponiveis[4] = 'o'
-        if jogadas_diponiveis[6] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[7] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[8] == 8:
         jogadas_diponiveis[8] = 'o'
-        if jogadas_diponiveis[9] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[7] == jogadas_diponiveis[8] == 'o' and jogadas_diponiveis[9] == 9:
         jogadas_diponiveis[9] = 'o'
-        if jogadas_diponiveis[8] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[8] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[7] == 7:
         jogadas_diponiveis[7] = 'o'
-        if jogadas_diponiveis[9] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[1] == jogadas_diponiveis[7] == 'o' and jogadas_diponiveis[4] == 4:
         jogadas_diponiveis[4] = 'o'
-        if jogadas_diponiveis[7] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[1] == jogadas_diponiveis[4] == 'o' and jogadas_diponiveis[7] == 7:
         jogadas_diponiveis[7] = 'o'
-        if jogadas_diponiveis[4] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[4] == jogadas_diponiveis[7] == 'o' and jogadas_diponiveis[1] == 1:
         jogadas_diponiveis[1] = 'o'
-        if jogadas_diponiveis[7] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[2] == jogadas_diponiveis[8] == 'o' and jogadas_diponiveis[5] == 5:
         jogadas_diponiveis[5] = 'o'
-        if jogadas_diponiveis[8] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[2] == jogadas_diponiveis[5] == 'o' and jogadas_diponiveis[8] == 8:
         jogadas_diponiveis[8] = 'o'
-        if jogadas_diponiveis[5] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[5] == jogadas_diponiveis[8] == 'o' and jogadas_diponiveis[2] == 2:
         jogadas_diponiveis[2] = 'o'
-        if jogadas_diponiveis[8] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[3] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[6] == 6:
         jogadas_diponiveis[6] = 'o'
-        if jogadas_diponiveis[9] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[3] == jogadas_diponiveis[6] == 'o' and jogadas_diponiveis[9] == 9:
         jogadas_diponiveis[9] = 'o'
-        if jogadas_diponiveis[6] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[6] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[3] == 3:
         jogadas_diponiveis[3] = 'o'
-        if jogadas_diponiveis[9] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[1] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[5] == 5:
         jogadas_diponiveis[5] = 'o'
-        if jogadas_diponiveis[9] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[1] == jogadas_diponiveis[5] == 'o' and jogadas_diponiveis[9] == 9:
         jogadas_diponiveis[9] = 'o'
-        if jogadas_diponiveis[5] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[5] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[1] == 1:
         jogadas_diponiveis[1] = 'o'
-        if jogadas_diponiveis[9] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[3] == jogadas_diponiveis[7] == 'o' and jogadas_diponiveis[5] == 5:
         jogadas_diponiveis[5] = 'o'
-        if jogadas_diponiveis[7] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[3] == jogadas_diponiveis[5] == 'o' and jogadas_diponiveis[7]== 7:
         jogadas_diponiveis[7] = 'o'
-        if jogadas_diponiveis[5] == 'o':
-            break
+        result = 'o'
+        break
     elif jogadas_diponiveis[5] == jogadas_diponiveis[7] == 'o' and jogadas_diponiveis[3] == 3:
         jogadas_diponiveis[7] = 'o'
-        if jogadas_diponiveis[7] == 'o':
-            break
-##########################################JOGADA_COMPUTADOR#######################################
+        result = 'o'
+        break
+############################################ jogada para o computador NÃO PERDER ###########################################
+    if jogadas_diponiveis[1] == jogadas_diponiveis[3] and jogadas_diponiveis[2] == 2:
+        jogadas_diponiveis[2] = 'o'
+    elif jogadas_diponiveis[1] == jogadas_diponiveis[2] and jogadas_diponiveis[3] == 3:
+        jogadas_diponiveis[3] = 'o'
+    elif jogadas_diponiveis[2] == jogadas_diponiveis[3] and jogadas_diponiveis[1] == 1:
+        jogadas_diponiveis[1] = 'o'
+    elif jogadas_diponiveis[4] == jogadas_diponiveis[6] and jogadas_diponiveis[5] == 2:
+        jogadas_diponiveis[5] = 'o'
+    elif jogadas_diponiveis[4] == jogadas_diponiveis[5] and jogadas_diponiveis[6] == 6:
+        jogadas_diponiveis[6] = 'o'
+    elif jogadas_diponiveis[5] == jogadas_diponiveis[6] and jogadas_diponiveis[4] == 4:
+        jogadas_diponiveis[4] = 'o'
+    elif jogadas_diponiveis[7] == jogadas_diponiveis[9] and jogadas_diponiveis[8] == 8:
+        jogadas_diponiveis[8] = 'o'
+    elif jogadas_diponiveis[7] == jogadas_diponiveis[8] and jogadas_diponiveis[9] == 9:
+        jogadas_diponiveis[9] = 'o'
+    elif jogadas_diponiveis[8] == jogadas_diponiveis[9] and jogadas_diponiveis[7] == 7:
+        jogadas_diponiveis[7] = 'o'
+    elif jogadas_diponiveis[1] == jogadas_diponiveis[7] and jogadas_diponiveis[4] == 4:
+        jogadas_diponiveis[4] = 'o'
+    elif jogadas_diponiveis[1] == jogadas_diponiveis[4] and jogadas_diponiveis[7] == 7:
+        jogadas_diponiveis[7] = 'o'
+    elif jogadas_diponiveis[4] == jogadas_diponiveis[7] and jogadas_diponiveis[1] == 1:
+        jogadas_diponiveis[1] = 'o'
+    elif jogadas_diponiveis[2] == jogadas_diponiveis[8] and jogadas_diponiveis[5] == 5:
+        jogadas_diponiveis[5] = 'o'
+    elif jogadas_diponiveis[2] == jogadas_diponiveis[5] and jogadas_diponiveis[8] == 8:
+        jogadas_diponiveis[8] = 'o'
+    elif jogadas_diponiveis[5] == jogadas_diponiveis[8] and jogadas_diponiveis[2] == 2:
+        jogadas_diponiveis[2] = 'o'
+    elif jogadas_diponiveis[3] == jogadas_diponiveis[9] and jogadas_diponiveis[6] == 6:
+        jogadas_diponiveis[6] = 'o'
+    elif jogadas_diponiveis[3] == jogadas_diponiveis[6] and jogadas_diponiveis[9] == 9:
+        jogadas_diponiveis[9] = 'o'
+    elif jogadas_diponiveis[6] == jogadas_diponiveis[9] and jogadas_diponiveis[3] == 3:
+        jogadas_diponiveis[3] = 'o'
+    elif jogadas_diponiveis[1] == jogadas_diponiveis[9] and jogadas_diponiveis[5] == 5:
+        jogadas_diponiveis[5] = 'o'
+    elif jogadas_diponiveis[1] == jogadas_diponiveis[5] and jogadas_diponiveis[9] == 9:
+        jogadas_diponiveis[9] = 'o'
+    elif jogadas_diponiveis[5] == jogadas_diponiveis[9] and jogadas_diponiveis[1] == 1:
+        jogadas_diponiveis[1] = 'o'
+    elif jogadas_diponiveis[3] == jogadas_diponiveis[7] and jogadas_diponiveis[5] == 5:
+        jogadas_diponiveis[5] = 'o'
+    elif jogadas_diponiveis[3] == jogadas_diponiveis[5] and jogadas_diponiveis[7] == 7:
+        jogadas_diponiveis[7] = 'o'
+    elif jogadas_diponiveis[5] == jogadas_diponiveis[7] and jogadas_diponiveis[3] == 3:
+        jogadas_diponiveis[7] = 'o'
+######################################### PRIMEIRA JOGADA COMPUTADOR ######################################
     if jogos == 0:
         if jogada_computador == 0:
             if jogadas_diponiveis[5] == 'x':
@@ -189,6 +238,7 @@ while True:
                     jogo_1 = 5
                     jogada_computador += 1
         else:
+######################################### JOGADA ALEATÓRIA COMPUTADOR ######################################
             while True:
                 jogada_computador = jogadas_diponiveis[random.randint(1, (len(jogadas_diponiveis)) - 1)]
                 if jogada_computador != 'o' and jogada_computador != 'x':
@@ -220,11 +270,11 @@ while True:
             elif jogada_computador == 9:
                 jogadas_diponiveis[9] = 'o'
                 jogo_1 = 9
-    print('Computador jogou {}'.format(int(jogo_1)))
+    print('Computador jogou: {}'.format(int(jogo_1)))
     print(jogo(jogada))
+################################################ FIM DO JOGO #####################################################
 print(jogo(jogada))
 if result == 'x':
     print('jogo ganho')
 elif result == 'o':
     print('jogo perdido')
-
