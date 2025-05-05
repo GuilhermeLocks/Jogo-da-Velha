@@ -32,7 +32,6 @@ def jogo(jogada):
 ------------------------------
 '''.format(jogadas_diponiveis[1], jogadas_diponiveis[2], jogadas_diponiveis[3], jogadas_diponiveis[4],
 jogadas_diponiveis[5], jogadas_diponiveis[6] ,jogadas_diponiveis[7] ,jogadas_diponiveis[8], jogadas_diponiveis[9]))
-print(jogo(jogada))
 ########################################## JOGADA #################################################
 while True:
     while True:
@@ -271,7 +270,7 @@ while True:
                 jogadas_diponiveis[9] = 'o'
                 jogo_1 = 9
     print('Computador jogou: {}'.format(int(jogo_1)))
-    print(jogo(jogada))
+    print(jogo(jogada), 'erro')
 ################################################ FIM DO JOGO #####################################################
 print(jogo(jogada))
 if result == 'x':
