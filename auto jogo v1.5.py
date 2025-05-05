@@ -4,7 +4,7 @@ lista_1 = [1,1,1,1,1,1,2,2,2,3,3,3,3,4,4,4,5,5,5,5,6,7,7,8]
 lista_2 = [2,3,4,5,7,9,3,5,8,5,6,7,9,5,6,7,6,7,8,9,9,8,9,9]
 lista_3 = [3,2,7,9,4,5,1,8,5,7,9,5,6,6,5,1,4,3,2,1,3,9,8,7]
 jogadas_diponiveis = ['x', 1, 2, 3, 4, 5, 6, 7, 8, 9]
-jogos = jogo_1 = jogada_computador = jogada = result = 0
+jogos = jogada_computador = jogada = result = 0
 ########################################## REALIZA A JOGADA DO JOGADOR ############################
 def velha(jogada):# REALIZA A JOGADA DO JOGADOR
     for c in range(0, 10):
@@ -28,6 +28,7 @@ jogadas_diponiveis[5], jogadas_diponiveis[6] ,jogadas_diponiveis[7] ,jogadas_dip
 velha(jogada)
 ########################################## JOGADA #################################################
 while result == 0:
+    jogos = 0
     while True:
         jogada = random.randint(1,9)
         if jogada in jogadas_diponiveis:
@@ -60,32 +61,27 @@ while result == 0:
                 jogada_computador = 3
                 print('Computador jogou {}'.format(jogada_computador))
                 print('erro3')
-                jogo_1 = 3
             elif jogadas_diponiveis[1] == 1:
                 jogadas_diponiveis[1] = 'o'
                 jogada_computador = 1
                 print('Computador jogou {}'.format(jogada_computador))
                 print('erro4')
-                jogo_1 = 1
             elif jogadas_diponiveis[7] == 7:
                 jogadas_diponiveis[7] = 'o'
                 jogada_computador = 7
                 print('Computador jogou {}'.format(jogada_computador))
                 print('erro5')
-                jogo_1 = 7
             elif jogadas_diponiveis[9] == 9:
                 jogadas_diponiveis[9] = 'o'
                 jogada_computador = 9
                 print('Computador jogou {}'.format(jogada_computador))
                 print('erro6')
-                jogo_1 = 9
         elif jogadas_diponiveis[1] == 'x' or jogadas_diponiveis[3] == 'x' or jogadas_diponiveis[7] == 'x' or jogadas_diponiveis[9] == 'o':
             if jogadas_diponiveis[5] == 5:
                 jogada_computador = 5
                 jogadas_diponiveis[5] = 'o'
                 print('Computador jogou {}'.format(jogada_computador))
                 print('erro7')
-                jogo_1 = 5
         else:
             while True:
                 jogada_computador = random.randint(1, 9)
@@ -115,7 +111,6 @@ while result == 0:
         jogos = 0
     else:
         break
-    jogos = 0
 if result == 'x':
     print('jogo ganho')
 elif result == 'o':
