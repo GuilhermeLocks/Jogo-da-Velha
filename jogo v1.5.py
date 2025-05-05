@@ -1,3 +1,4 @@
+########################################### DADOS E BIBLIOTECA PARA O JOGO #############################
 import random
 lista_1 = [1,1,1,1,1,1,2,2,2,3,3,3,3,4,4,4,5,5,5,5,6,7,7,8]
 lista_2 = [2,3,4,5,7,9,3,5,8,5,6,7,9,5,6,7,6,7,8,9,9,8,9,9]
@@ -5,7 +6,7 @@ lista_3 = [3,2,7,9,4,5,1,8,5,7,9,5,6,6,5,1,4,3,2,1,3,9,8,7]
 jogadas_diponiveis = ['x', 1, 2, 3, 4, 5, 6, 7, 8, 9]
 jogos = jogo_1 = jogada_computador = jogada = result = 0
 ########################################## REALIZA A JOGADA DO JOGADOR ############################
-def velha(jogada):
+def velha(jogada):# REALIZA A JOGADA DO JOGADOR
     for c in range(0, 10):
         if jogada == c:
             jogadas_diponiveis[c] = 'x'
@@ -24,7 +25,6 @@ def velha(jogada):
 ------------------------------
 '''.format(jogadas_diponiveis[1], jogadas_diponiveis[2], jogadas_diponiveis[3], jogadas_diponiveis[4],
 jogadas_diponiveis[5], jogadas_diponiveis[6] ,jogadas_diponiveis[7] ,jogadas_diponiveis[8], jogadas_diponiveis[9]))
-########################################## O JOGO #################################################
 velha(jogada)
 ########################################## JOGADA #################################################
 while result == 0:
@@ -40,7 +40,6 @@ while result == 0:
                 print('Essa posição ja esta oculpada, tente novamente')
         else:
             print('Jogada invalida tente novamente')
-########################################## REALIZA A JOGADA DO JOGADOR #################################################
 ####################################### JOGADA PARA O COMPUTADOR GANHAR ###################################
     for c in range(0, 24):
         if jogadas_diponiveis[lista_1[c]] == jogadas_diponiveis[lista_2[c]] == 'o' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x' and jogos == 0:
@@ -92,9 +91,7 @@ while result == 0:
         jogos = 0
         print('Computador jogou: {}'.format(int(jogo_1)))
     velha(jogada)
-########################################## O JOGO #################################################
 velha(jogada)
-################################################ FIM DO JOGO #####################################################
 if result == 'x':
     print('jogo ganho')
 elif result == 'o':
