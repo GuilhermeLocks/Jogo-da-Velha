@@ -75,34 +75,6 @@ while True:
         jogadas_diponiveis[3] = 'o'
         result = 'o'
         break
-    elif jogadas_diponiveis[2] == jogadas_diponiveis[3] == 'o' and jogadas_diponiveis[1] == 1:
-        jogadas_diponiveis[1] = 'o'
-        result = 'o'
-        break
-    elif jogadas_diponiveis[4] == jogadas_diponiveis[6] == 'o' and jogadas_diponiveis[5] == 2:
-        jogadas_diponiveis[5] = 'o'
-        result = 'o'
-        break
-    elif jogadas_diponiveis[4] == jogadas_diponiveis[5] == 'o' and jogadas_diponiveis[6] == 6:
-        jogadas_diponiveis[6] = 'o'
-        result = 'o'
-        break
-    elif jogadas_diponiveis[5] == jogadas_diponiveis[6] == 'o' and jogadas_diponiveis[4] == 4:
-        jogadas_diponiveis[4] = 'o'
-        result = 'o'
-        break
-    elif jogadas_diponiveis[7] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[8] == 8:
-        jogadas_diponiveis[8] = 'o'
-        result = 'o'
-        break
-    elif jogadas_diponiveis[7] == jogadas_diponiveis[8] == 'o' and jogadas_diponiveis[9] == 9:
-        jogadas_diponiveis[9] = 'o'
-        result = 'o'
-        break
-    elif jogadas_diponiveis[8] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[7] == 7:
-        jogadas_diponiveis[7] = 'o'
-        result = 'o'
-        break
     elif jogadas_diponiveis[1] == jogadas_diponiveis[7] == 'o' and jogadas_diponiveis[4] == 4:
         jogadas_diponiveis[4] = 'o'
         result = 'o'
@@ -111,7 +83,15 @@ while True:
         jogadas_diponiveis[7] = 'o'
         result = 'o'
         break
-    elif jogadas_diponiveis[4] == jogadas_diponiveis[7] == 'o' and jogadas_diponiveis[1] == 1:
+    elif jogadas_diponiveis[1] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[5] == 5:
+        jogadas_diponiveis[5] = 'o'
+        result = 'o'
+        break
+    elif jogadas_diponiveis[1] == jogadas_diponiveis[5] == 'o' and jogadas_diponiveis[9] == 9:
+        jogadas_diponiveis[9] = 'o'
+        result = 'o'
+        break
+    elif jogadas_diponiveis[2] == jogadas_diponiveis[3] == 'o' and jogadas_diponiveis[1] == 1:
         jogadas_diponiveis[1] = 'o'
         result = 'o'
         break
@@ -123,32 +103,12 @@ while True:
         jogadas_diponiveis[8] = 'o'
         result = 'o'
         break
-    elif jogadas_diponiveis[5] == jogadas_diponiveis[8] == 'o' and jogadas_diponiveis[2] == 2:
-        jogadas_diponiveis[2] = 'o'
-        result = 'o'
-        break
     elif jogadas_diponiveis[3] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[6] == 6:
         jogadas_diponiveis[6] = 'o'
         result = 'o'
         break
     elif jogadas_diponiveis[3] == jogadas_diponiveis[6] == 'o' and jogadas_diponiveis[9] == 9:
         jogadas_diponiveis[9] = 'o'
-        result = 'o'
-        break
-    elif jogadas_diponiveis[6] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[3] == 3:
-        jogadas_diponiveis[3] = 'o'
-        result = 'o'
-        break
-    elif jogadas_diponiveis[1] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[5] == 5:
-        jogadas_diponiveis[5] = 'o'
-        result = 'o'
-        break
-    elif jogadas_diponiveis[1] == jogadas_diponiveis[5] == 'o' and jogadas_diponiveis[9] == 9:
-        jogadas_diponiveis[9] = 'o'
-        result = 'o'
-        break
-    elif jogadas_diponiveis[5] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[1] == 1:
-        jogadas_diponiveis[1] = 'o'
         result = 'o'
         break
     elif jogadas_diponiveis[3] == jogadas_diponiveis[7] == 'o' and jogadas_diponiveis[5] == 5:
@@ -159,7 +119,47 @@ while True:
         jogadas_diponiveis[7] = 'o'
         result = 'o'
         break
+    elif jogadas_diponiveis[4] == jogadas_diponiveis[6] == 'o' and jogadas_diponiveis[5] == 2:
+        jogadas_diponiveis[5] = 'o'
+        result = 'o'
+        break
+    elif jogadas_diponiveis[4] == jogadas_diponiveis[5] == 'o' and jogadas_diponiveis[6] == 6:
+        jogadas_diponiveis[6] = 'o'
+        result = 'o'
+        break
+    elif jogadas_diponiveis[4] == jogadas_diponiveis[7] == 'o' and jogadas_diponiveis[1] == 1:
+        jogadas_diponiveis[1] = 'o'
+        result = 'o'
+        break
+    elif jogadas_diponiveis[5] == jogadas_diponiveis[6] == 'o' and jogadas_diponiveis[4] == 4:
+        jogadas_diponiveis[4] = 'o'
+        result = 'o'
+        break
+    elif jogadas_diponiveis[5] == jogadas_diponiveis[8] == 'o' and jogadas_diponiveis[2] == 2:
+        jogadas_diponiveis[2] = 'o'
+        result = 'o'
+        break
+    elif jogadas_diponiveis[5] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[1] == 1:
+        jogadas_diponiveis[1] = 'o'
+        result = 'o'
+        break
     elif jogadas_diponiveis[5] == jogadas_diponiveis[7] == 'o' and jogadas_diponiveis[3] == 3:
+        jogadas_diponiveis[7] = 'o'
+        result = 'o'
+        break
+    elif jogadas_diponiveis[6] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[3] == 3:
+        jogadas_diponiveis[3] = 'o'
+        result = 'o'
+        break
+    elif jogadas_diponiveis[7] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[8] == 8:
+        jogadas_diponiveis[8] = 'o'
+        result = 'o'
+        break
+    elif jogadas_diponiveis[7] == jogadas_diponiveis[8] == 'o' and jogadas_diponiveis[9] == 9:
+        jogadas_diponiveis[9] = 'o'
+        result = 'o'
+        break
+    elif jogadas_diponiveis[8] == jogadas_diponiveis[9] == 'o' and jogadas_diponiveis[7] == 7:
         jogadas_diponiveis[7] = 'o'
         result = 'o'
         break
