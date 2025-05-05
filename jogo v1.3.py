@@ -32,8 +32,8 @@ def jogo(jogada):
 ------------------------------
 '''.format(jogadas_diponiveis[1], jogadas_diponiveis[2], jogadas_diponiveis[3], jogadas_diponiveis[4],
 jogadas_diponiveis[5], jogadas_diponiveis[6] ,jogadas_diponiveis[7] ,jogadas_diponiveis[8], jogadas_diponiveis[9]))
-    return tabulerio
-##########################################JOGADA#################################################
+print(jogo(jogada))
+########################################## JOGADA #################################################
 while True:
     while True:
         jogada = input('Qual sua jogada? ')
