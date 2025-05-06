@@ -38,16 +38,17 @@ while result == 0:
             print('Jogada invalida tente novamente')
     for c in range(0, 24):  # JOGADA PARA O COMPUTADOR GANHAR
         if jogadas_diponiveis[lista_1[c]] == jogadas_diponiveis[lista_2[c]] == 'o' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x' and jogos == 0:
+            print('Computador jogou: {}'.format(int(jogada_computador)))
             jogadas_diponiveis[lista_3[c]] = 'o'
             result = 'o'
             jogos += 1
             break
     for c in range(0, 24):  # JOGADA PARA O COMPUTADOR NÃO PERDER
         if jogadas_diponiveis[lista_1[c]] == jogadas_diponiveis[lista_2[c]] == 'x' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x' and jogos == 0:
+            print('Computador jogou: {}'.format(int(jogada_computador)))
             jogada_computador = jogadas_diponiveis[lista_3[c]]
             jogadas_diponiveis[lista_3[c]] = 'o'
             jogos += 1
-            print('Computador jogou: {}'.format(jogada_computador))
     if jogos == 0:  # PRIMEIRA JOGADA COMPUTADOR
         if jogadas_diponiveis[5] == 'x':
             if jogadas_diponiveis[3] == 3:
@@ -80,10 +81,9 @@ while result == 0:
                 if jogada_computador == c:
                     jogadas_diponiveis[c] = 'o'
                     jogada_computador = c
-    print('Computador jogou: {}'.format(int(jogada_computador)))
+        print('Computador jogou: {}'.format(int(jogada_computador)))
     velha(jogada)
     jogos = 0
-velha(jogada)
 if result == 'x':
     print('jogo ganho')
 elif result == 'o':
