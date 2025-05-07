@@ -9,7 +9,8 @@ while True:
         moeda += valor
 
     if acao == 'L':
-        compra = input('''[1] +2 moeda=10
+        compra = input('''
+[1] +2 moeda=10
 [2] +5 moeda=1000
 [3] s para sair''')
 
