@@ -96,10 +96,13 @@ while result == 0:
     cont_2 = 0
     if result == 'x':
         print('jogo ganho')
+        break
     if result == 'o':
         print('jogo perdido')
+        break
     if result == 'e':
         print('jogo empatado')
+        break
 
     if jogos_computador_1 == 0:
         for c in range(0, 24):  # JOGADA PARA O COMPUTADOR GANHAR
@@ -166,7 +169,10 @@ while result == 0:
     cont_2 = 0
     if result == 'x':
         print('jogo ganho')
+        break
     if result == 'o':
         print('jogo perdido')
+        break
     if result == 'e':
         print('jogo empatado')
+        break
