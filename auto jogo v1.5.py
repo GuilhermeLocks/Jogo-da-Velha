@@ -25,20 +25,25 @@ jogadas_diponiveis[5], jogadas_diponiveis[6] ,jogadas_diponiveis[7] ,jogadas_dip
 velha(jogada_computador_2)
 while result == 0:
 
-    for c in range(0, 24):  # JOGADA PARA O COMPUTADOR GANHAR
-        if jogadas_diponiveis[lista_1[c]] == jogadas_diponiveis[lista_2[c]] == 'x' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x' and jogos_computador_2 == 0:
-            print('Computador21 jogou: {}'.format(int(jogadas_diponiveis[lista_3[c]])))
-            jogadas_diponiveis[lista_3[c]] = 'x'
-            jogos_computador_2 += 1
-            result = 'x'
-            break
+    jogas_computador_2 = 0
 
-    for c in range(0, 24):  # JOGADA PARA O COMPUTADOR NÃO PERDER
-        if jogadas_diponiveis[lista_1[c]] == jogadas_diponiveis[lista_2[c]] == 'o' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x' and jogos_computador_2 == 0:
-            print('Computador22 jogou: {}'.format(int(jogadas_diponiveis[lista_3[c]])))
-            jogadas_diponiveis[lista_3[c]] = 'x'
-            jogada_computador_2 = jogadas_diponiveis[lista_3[c]]
-            jogos_computador_2 += 1
+    if jogos_computador_2 == 0:
+        for c in range(0, 24):  # JOGADA PARA O COMPUTADOR GANHAR
+            if jogadas_diponiveis[lista_1[c]] == jogadas_diponiveis[lista_2[c]] == 'x' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x':
+                print('Computador21 jogou: {}'.format(jogadas_diponiveis[lista_3[c]]))
+                jogadas_diponiveis[lista_3[c]] = 'x'
+                jogos_computador_2 += 1
+                result = 'x'
+                break
+
+    if jogos_computador_2 == 0:
+        for c in range(0, 24):  # JOGADA PARA O COMPUTADOR NÃO PERDER
+            if jogadas_diponiveis[lista_1[c]] == 'o' and jogadas_diponiveis[lista_2[c]] == 'o' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x':
+                print('Computador22 jogou: {}'.format(jogadas_diponiveis[lista_3[c]]))
+                jogadas_diponiveis[lista_3[c]] = 'x'
+                jogada_computador_2 = jogadas_diponiveis[lista_3[c]]
+                jogos_computador_2 += 1
+
 
     if jogos_computador_2 == 0:  # PRIMEIRA JOGADA COMPUTADOR
         if jogadas_diponiveis[5] == 'o':
@@ -46,52 +51,61 @@ while result == 0:
                 jogadas_diponiveis[3] = 'x'
                 jogada_computador_2 = 3
                 jogos_computador_2 += 1
+                print('Computador23 jogou: {}'.format(int(jogada_computador_2)))
             elif jogadas_diponiveis[1] == 1:
                 jogadas_diponiveis[1] = 'x'
                 jogada_computador_2 = 1
                 jogos_computador_2 += 1
+                print('Computador23 jogou: {}'.format(int(jogada_computador_2)))
             elif jogadas_diponiveis[7] == 7:
                 jogadas_diponiveis[7] = 'x'
                 jogada_computador_2 = 7
                 jogos_computador_2 += 1
+                print('Computador23 jogou: {}'.format(int(jogada_computador_2)))
             elif jogadas_diponiveis[9] == 9:
                 jogadas_diponiveis[9] = 'x'
                 jogada_computador_2 = 9
                 jogos_computador_2 += 1
-        elif jogadas_diponiveis[1] == 'x' or jogadas_diponiveis[3] == 'x' or jogadas_diponiveis[7] == 'x' or jogadas_diponiveis[9] == 'o':
+                print('Computador23 jogou: {}'.format(int(jogada_computador_2)))
+
+        if jogadas_diponiveis[1] == 'x' or jogadas_diponiveis[3] == 'x' or jogadas_diponiveis[7] == 'x' or jogadas_diponiveis[9] == 'o':
             if jogadas_diponiveis[5] == 5:
                 jogadas_diponiveis[5] = 'o'
                 jogada_computador_2 = 5
                 jogos_computador_2 += 1
+                print('Computador23 jogou: {}'.format(int(jogada_computador_2)))
 
-        if jogos_computador_2 == 0:  # JOGADA ALEATÓRIA COMPUTADOR
-            while True:
-                jogada_computador_2 = jogadas_diponiveis[random.randint(1, (len(jogadas_diponiveis)) - 1)]
-                if jogada_computador_2 != 'o' and jogada_computador_2 != 'x':
-                    break
-            for c in range(1, 10):
-                if jogada_computador_2 == c:
-                    jogadas_diponiveis[c] = 'x'
-                    jogada_computador_2 = c
-        print('Computador23 jogou: {}'.format(int(jogada_computador_2)))
-    jogada_computador_2 = 0
-    velha(jogada_computador_2)
+    if jogos_computador_2 == 0:  # JOGADA ALEATÓRIA COMPUTADOR
+        while True:
+            jogada_computador_2 = jogadas_diponiveis[random.randint(1, (len(jogadas_diponiveis)) - 1)]
+            if jogada_computador_2 != 'o' and jogada_computador_2 != 'x':
+                break
+        for c in range(1, 10):
+            if jogada_computador_2 == c:
+                jogadas_diponiveis[c] = 'x'
+                jogada_computador_2 = c
+        print('Computador24 jogou: {}'.format(int(jogada_computador_2)))
+        jogas_computador_2 = 0
 
+    jogas_computador_2 = 0
+    velha(jogada_computador_2,)
 
-    for c in range(0, 24):  # JOGADA PARA O COMPUTADOR GANHAR
-        if jogadas_diponiveis[lista_1[c]] == jogadas_diponiveis[lista_2[c]] == 'o' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x' and jogos_computador_1 == 0:
-            print('Computador11 jogou: {}'.format(jogadas_diponiveis[lista_3[c]]))
-            jogadas_diponiveis[lista_3[c]] = 'o'
-            result = 'o'
-            jogos_computador_1 += 1
-            break
+    if jogos_computador_1 == 0:
+        for c in range(0, 24):  # JOGADA PARA O COMPUTADOR GANHAR
+            if jogadas_diponiveis[lista_1[c]] == jogadas_diponiveis[lista_2[c]] == 'o' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x':
+                print('Computador11 jogou: {}'.format(jogadas_diponiveis[lista_3[c]]))
+                jogadas_diponiveis[lista_3[c]] = 'o'
+                result = 'o'
+                jogos_computador_1 += 1
+                break
 
-    for c in range(0, 24):  # JOGADA PARA O COMPUTADOR NÃO PERDER
-        if jogadas_diponiveis[lista_1[c]] == jogadas_diponiveis[lista_2[c]] == 'x' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x' and jogos_computador_1 == 0:
-            print('Computador12 jogou: {}'.format((jogadas_diponiveis[lista_3[c]])))
-            jogada_computador_1 = jogadas_diponiveis[lista_3[c]]
-            jogadas_diponiveis[lista_3[c]] = 'o'
-            jogos_computador_1 += 1
+    if jogos_computador_1 == 0:
+        for c in range(0, 24):  # JOGADA PARA O COMPUTADOR NÃO PERDER
+            if jogadas_diponiveis[lista_1[c]] == jogadas_diponiveis[lista_2[c]] == 'x' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x':
+                print('Computador12 jogou: {}'.format((jogadas_diponiveis[lista_3[c]])))
+                jogada_computador_1 = jogadas_diponiveis[lista_3[c]]
+                jogadas_diponiveis[lista_3[c]] = 'o'
+                jogos_computador_1 += 1
 
     if jogos_computador_1 == 0:  # PRIMEIRA JOGADA COMPUTADOR
         if jogadas_diponiveis[5] == 'x':
@@ -99,35 +113,63 @@ while result == 0:
                 jogadas_diponiveis[3] = 'o'
                 jogada_computador_1 = 3
                 jogos_computador_1 += 1
+                print('Computador13 jogou: {}'.format((jogada_computador_1)))
             elif jogadas_diponiveis[1] == 1:
                 jogadas_diponiveis[1] = 'o'
                 jogada_computador_1 = 1
                 jogos_computador_1 += 1
+                print('Computador13 jogou: {}'.format((jogada_computador_1)))
             elif jogadas_diponiveis[7] == 7:
                 jogadas_diponiveis[7] = 'o'
                 jogada_computador_1 = 7
                 jogos_computador_1 += 1
+                print('Computador13 jogou: {}'.format((jogada_computador_1)))
             elif jogadas_diponiveis[9] == 9:
                 jogadas_diponiveis[9] = 'o'
                 jogada_computador_1 = 9
                 jogos_computador_1 += 1
+                print('Computador13 jogou: {}'.format((jogada_computador_1)))
         elif jogadas_diponiveis[1] == 'x' or jogadas_diponiveis[3] == 'x' or jogadas_diponiveis[7] == 'x' or jogadas_diponiveis[9] == 'o':
             if jogadas_diponiveis[5] == 5:
                 jogadas_diponiveis[5] = 'o'
                 jogada_computador_1 = 5
                 jogos_computador_1 += 1
-        if jogos_computador_1 == 0:  # JOGADA ALEATÓRIA COMPUTADOR
-            while True:
-                jogada_computador_1 = jogadas_diponiveis[random.randint(1, (len(jogadas_diponiveis)) - 1)]
-                if jogada_computador_1 != 'o' and jogada_computador_1 != 'x':
-                    break
-            for c in range(1, 10):
-                if jogada_computador_1 == c:
-                    jogadas_diponiveis[c] = 'o'
-                    jogada_computador_1 = c
+                print('Computador13 jogou: {}'.format((jogada_computador_1)))
+    if jogos_computador_1 == 0:  # JOGADA ALEATÓRIA COMPUTADOR
+        while True:
+            jogada_computador_1 = jogadas_diponiveis[random.randint(1, (len(jogadas_diponiveis)) - 1)]
+            if jogada_computador_1 != 'o' and jogada_computador_1 != 'x':
+                break
+        for c in range(1, 10):
+            if jogada_computador_1 == c:
+                jogadas_diponiveis[c] = 'o'
+                jogada_computador_1 = c
         print('Computador13 jogou: {}'.format(int(jogada_computador_1)))
     velha(jogada_computador_2)
     jogos_computador_1 = 0
+    jogos_computador_2 = 0
+
+    if 1 in jogadas_diponiveis:
+        jogos = 0
+    elif 2 in jogadas_diponiveis:
+        jogos = 0
+    elif 3 in jogadas_diponiveis:
+        jogos = 0
+    elif 4 in jogadas_diponiveis:
+        jogos = 0
+    elif 5 in jogadas_diponiveis:
+        jogos = 0
+    elif 6 in jogadas_diponiveis:
+        jogos = 0
+    elif 7 in jogadas_diponiveis:
+        jogos = 0
+    elif 8 in jogadas_diponiveis:
+        jogos = 0
+    elif 9 in jogadas_diponiveis:
+        jogos = 0
+    else:
+        break
+        
 if result == 'x':
     print('jogo ganho')
 elif result == 'o':
