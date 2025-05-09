@@ -2,7 +2,7 @@ import random   # DADOS E BIBLIOTECA PARA O JOGO
 lista_1 = [1,1,1,1,1,1,2,2,2,3,3,3,3,4,4,4,5,5,5,5,6,7,7,8]
 lista_2 = [2,3,4,5,7,9,3,5,8,5,6,7,9,5,6,7,6,7,8,9,9,8,9,9]
 lista_3 = [3,2,7,9,4,5,1,8,5,7,9,5,6,6,5,1,4,3,2,1,3,9,8,7]
-jogos_computador_2 = jogos_computador_1 = jogada_computador_1 = jogada_computador_2 = result = 0
+jogos_computador_2 = jogos_computador_1 = jogada_computador_1 = jogada_computador_2 = result = cont_1 = cont_2 = 0
 jogadas_diponiveis = ['x', 1, 2, 3, 4, 5, 6, 7, 8, 9]
 def velha(jogada_computador_2):   # REALIZA A JOGADA DO JOGADOR
     for c in range(0, 10):
@@ -25,7 +25,8 @@ jogadas_diponiveis[5], jogadas_diponiveis[6] ,jogadas_diponiveis[7] ,jogadas_dip
 velha(jogada_computador_2)
 while result == 0:
 
-    jogas_computador_2 = 0
+    jogos_computador_1 = 0
+    jogos_computador_2 = 0
 
     if jogos_computador_2 == 0:
         for c in range(0, 24):  # JOGADA PARA O COMPUTADOR GANHAR
@@ -36,14 +37,13 @@ while result == 0:
                 result = 'x'
                 break
 
-    if jogos_computador_2 == 0:
-        for c in range(0, 24):  # JOGADA PARA O COMPUTADOR NÃO PERDER
-            if jogadas_diponiveis[lista_1[c]] == 'o' and jogadas_diponiveis[lista_2[c]] == 'o' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x':
-                print('Computador22 jogou: {}'.format(jogadas_diponiveis[lista_3[c]]))
-                jogadas_diponiveis[lista_3[c]] = 'x'
-                jogada_computador_2 = jogadas_diponiveis[lista_3[c]]
-                jogos_computador_2 += 1
 
+    for c in range(0, 24):  # JOGADA PARA O COMPUTADOR NÃO PERDER
+        if jogadas_diponiveis[lista_1[c]] == 'o' and jogadas_diponiveis[lista_2[c]] == 'o' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x' and jogos_computador_2 == 0:
+            print('Computador22 jogou: {}'.format(jogadas_diponiveis[lista_3[c]]))
+            jogadas_diponiveis[lista_3[c]] = 'x'
+            jogada_computador_2 = jogadas_diponiveis[lista_3[c]]
+            jogos_computador_2 += 1
 
     if jogos_computador_2 == 0:  # PRIMEIRA JOGADA COMPUTADOR
         if jogadas_diponiveis[5] == 'o':
@@ -87,8 +87,19 @@ while result == 0:
         print('Computador24 jogou: {}'.format(int(jogada_computador_2)))
         jogas_computador_2 = 0
 
-    jogas_computador_2 = 0
-    velha(jogada_computador_2,)
+    velha(jogada_computador_2)
+    for c in range(0, 10):
+        if c != jogadas_diponiveis[c]:
+            cont_2 += 1
+        if cont_2 == 10:
+            result = 'e'
+    cont_2 = 0
+    if result == 'x':
+        print('jogo ganho')
+    if result == 'o':
+        print('jogo perdido')
+    if result == 'e':
+        print('jogo empatado')
 
     if jogos_computador_1 == 0:
         for c in range(0, 24):  # JOGADA PARA O COMPUTADOR GANHAR
@@ -145,32 +156,17 @@ while result == 0:
                 jogadas_diponiveis[c] = 'o'
                 jogada_computador_1 = c
         print('Computador13 jogou: {}'.format(int(jogada_computador_1)))
-    velha(jogada_computador_2)
-    jogos_computador_1 = 0
-    jogos_computador_2 = 0
 
-    if 1 in jogadas_diponiveis:
-        jogos = 0
-    elif 2 in jogadas_diponiveis:
-        jogos = 0
-    elif 3 in jogadas_diponiveis:
-        jogos = 0
-    elif 4 in jogadas_diponiveis:
-        jogos = 0
-    elif 5 in jogadas_diponiveis:
-        jogos = 0
-    elif 6 in jogadas_diponiveis:
-        jogos = 0
-    elif 7 in jogadas_diponiveis:
-        jogos = 0
-    elif 8 in jogadas_diponiveis:
-        jogos = 0
-    elif 9 in jogadas_diponiveis:
-        jogos = 0
-    else:
-        break
-        
-if result == 'x':
-    print('jogo ganho')
-elif result == 'o':
-    print('jogo perdido')
+    velha(jogada_computador_2)
+    for c in range(0, 10):
+        if c != jogadas_diponiveis[c]:
+            cont_2 += 1
+        if cont_2 == 10:
+            result = 'e'
+    cont_2 = 0
+    if result == 'x':
+        print('jogo ganho')
+    if result == 'o':
+        print('jogo perdido')
+    if result == 'e':
+        print('jogo empatado')
