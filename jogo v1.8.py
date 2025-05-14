@@ -1,13 +1,15 @@
-import random   # DADOS E BIBLIOTECA PARA O JOGO
+# DADOS E BIBLIOTECA PARA O JOGO
+
+jogos_computador_1 = jogada_computador_1 = resultado = empate = 0
 lista_1 = [1,1,1,1,1,1,2,2,2,3,3,3,3,4,4,4,5,5,5,5,6,7,7,8]
 lista_2 = [2,3,4,5,7,9,3,5,8,5,6,7,9,5,6,7,6,7,8,9,9,8,9,9]
 lista_3 = [3,2,7,9,4,5,1,8,5,7,9,5,6,6,5,1,4,3,2,1,3,9,8,7]
-jogos_computador_1 = jogada_computador_1 = jogada_computador_2 = result = cont_2 = 0
 jogadas_diponiveis = ['x', 1, 2, 3, 4, 5, 6, 7, 8, 9]
-def velha(jogada_computador_2):   # REALIZA A JOGADA DO JOGADOR
-    for c in range(0, 10):
-        if jogada_computador_2 == c:
-            jogadas_diponiveis[c] = 'x'
+import random
+
+# jogo
+
+def velha(empate, resultado):
     print('''
 ------------------------------
          JOGO DA VELHA          
@@ -22,8 +24,28 @@ def velha(jogada_computador_2):   # REALIZA A JOGADA DO JOGADOR
 ------------------------------
 '''.format(jogadas_diponiveis[1], jogadas_diponiveis[2], jogadas_diponiveis[3], jogadas_diponiveis[4],
 jogadas_diponiveis[5], jogadas_diponiveis[6] ,jogadas_diponiveis[7] ,jogadas_diponiveis[8], jogadas_diponiveis[9]))
-velha(jogada_computador_2)
-while result == 0:
+
+    #verifica empate
+
+    for c in range(0, 10):
+        if c != jogadas_diponiveis[c]:
+            empate += 1
+        if empate == 10:
+            resultado = 'e'
+
+    #verifica o resultado
+
+    if resultado == 'x':
+        print('jogo ganho')
+    if resultado == 'o':
+        print('jogo perdido')
+    if resultado == 'e':
+        print('jogo empatado')
+
+while resultado == 0:
+
+    #JOGO
+    velha(empate, resultado)
 
     # JOGADA
     while True:
@@ -35,42 +57,24 @@ while result == 0:
                 jogadas_diponiveis.insert(jogada, 'x')
                 break
             else:
-                print('Essa posição ja esta oculpada, tente novamente')
+               print('Essa posição ja esta oculpada, tente novamente')
         else:
             print('Jogada invalida tente novamente')
 
-
     # JOGO
-    velha(jogada_computador_2)
-    for c in range(0, 10):
-        if c != jogadas_diponiveis[c]:
-            cont_2 += 1
-        if cont_2 == 10:
-            result = 'e'
-    cont_2 = 0
-    if result == 'x':
-        print('jogo ganho')
-        break
-    if result == 'o':
-        print('jogo perdido')
-        break
-    if result == 'e':
-        print('jogo empatado')
-        break
+    velha(empate, resultado)
 
-
-    # JOGADA PARA O COMPUTADOR GANHAR
+    #verifica se tem alguma jogada para ganhar
     if jogos_computador_1 == 0:
         for c in range(0, 24):
             if jogadas_diponiveis[lista_1[c]] == jogadas_diponiveis[lista_2[c]] == 'o' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x':
                 print('Computador11 jogou: {}'.format(jogadas_diponiveis[lista_3[c]]))
                 jogadas_diponiveis[lista_3[c]] = 'o'
-                result = 'o'
+                resultado = 'o'
                 jogos_computador_1 += 1
                 break
 
-
-    # JOGADA PARA O COMPUTADOR NÃO PERDER
+    #verifica se tem alguma jogada para impedir a vitoria do oponente
     for c in range(0, 24):
         if jogadas_diponiveis[lista_1[c]] == jogadas_diponiveis[lista_2[c]] == 'x' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x' and jogos_computador_1 == 0:
             print('Computador12 jogou: {}'.format((jogadas_diponiveis[lista_3[c]])))
@@ -78,8 +82,7 @@ while result == 0:
             jogadas_diponiveis[lista_3[c]] = 'o'
             jogos_computador_1 += 1
 
-
-    # PRIMEIRA JOGADA COMPUTADOR
+    #realiza a primeira jogada
     if jogos_computador_1 == 0:
         if jogadas_diponiveis[5] == 'x':
             if jogadas_diponiveis[3] == 3:
@@ -109,8 +112,7 @@ while result == 0:
                 jogos_computador_1 += 1
                 print('Computador13 jogou: {}'.format((jogada_computador_1)))
 
-
-    # JOGADA ALEATÓRIA COMPUTADOR
+    #realiza uma jogada aleatória
     if jogos_computador_1 == 0:
         while True:
             jogada_computador_1 = jogadas_diponiveis[random.randint(1, (len(jogadas_diponiveis)) - 1)]
@@ -122,21 +124,5 @@ while result == 0:
                 jogada_computador_1 = c
         print('Computador13 jogou: {}'.format(int(jogada_computador_1)))
 
-    # JOGO
-    velha(jogada_computador_2)
+    #zera a jogada do computador
     jogos_computador_1 = 0
-    for c in range(0, 10):
-        if c != jogadas_diponiveis[c]:
-            cont_2 += 1
-        if cont_2 == 10:
-            result = 'e'
-    cont_2 = 0
-    if result == 'x':
-        print('jogo ganho')
-        break
-    if result == 'o':
-        print('jogo perdido')
-        break
-    if result == 'e':
-        print('jogo empatado')
-        break
