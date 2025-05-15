@@ -9,18 +9,8 @@ PRIMEIRA_OPCAO_DE_JOGADA = [1, 3, 7, 9]
 SEGUNDA_OPCAO_DE_JOGADA = [1, 3, 7, 9]
 import random
 def jogo(empate, resultado):
-    print('''
-------------------------------
-         JOGO DA VELHA          
-------------------------------
-
-        {}  |  {}  |  {}
-       ------------------
-        {}  |  {}  |  {}
-       ------------------
-        {}  |  {}  |  {}
-
-------------------------------
+    print('''------------------------------\n        JOGO DA VELHA          \n------------------------------\n\n        {}  |  {}  |  {}
+      ------------------\n        {}  |  {}  |  {}\n      ------------------\n        {}  |  {}  |  {}\n\n------------------------------
 '''.format(jogadas_diponiveis[1], jogadas_diponiveis[2], jogadas_diponiveis[3], jogadas_diponiveis[4],
 jogadas_diponiveis[5], jogadas_diponiveis[6] ,jogadas_diponiveis[7] ,jogadas_diponiveis[8], jogadas_diponiveis[9]))
     for c in range(0, 10):
