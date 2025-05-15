@@ -34,7 +34,9 @@ jogadas_diponiveis[5], jogadas_diponiveis[6] ,jogadas_diponiveis[7] ,jogadas_dip
     if resultado == 'empate':
         print('jogo empatado')
 while resultado == 0:
+
     jogo(empate, resultado)
+
     while True:
         jogada = input('Qual sua jogada? ')
         if jogada.isnumeric() == True:
@@ -47,18 +49,22 @@ while resultado == 0:
                print('Essa posição ja esta ocupada, tente novamente')
         else:
             print('Jogada invalida tente novamente')
+
     jogo(empate, resultado)
+
     for c in JOGADA_PARA_O_COMPUTADOR_GANHAR:
         if jogadas_diponiveis[lista_1[c]] == jogadas_diponiveis[lista_2[c]] == 'o' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x' and VERIFICA_SE_O_COMPUTADOR_JOGOU == 0:
             print('Computador11 jogou: {}'.format(jogadas_diponiveis[lista_3[c]]))
             jogadas_diponiveis[lista_3[c]] = 'o'
             resultado = 'computador_ganhou'
             VERIFICA_SE_O_COMPUTADOR_JOGOU += 1
+
     for c in JOGADA_PARA_O_COMPUTADOR_NAO_PERDER:
         if jogadas_diponiveis[lista_1[c]] == jogadas_diponiveis[lista_2[c]] == 'x' and jogadas_diponiveis[lista_3[c]] != 'o' and jogadas_diponiveis[lista_3[c]] != 'x' and VERIFICA_SE_O_COMPUTADOR_JOGOU == 0:
             print('Computador12 jogou: {}'.format((jogadas_diponiveis[lista_3[c]])))
             jogadas_diponiveis[lista_3[c]] = 'o'
             VERIFICA_SE_O_COMPUTADOR_JOGOU += 1
+
     if VERIFICA_SE_O_COMPUTADOR_JOGOU == 0 and jogadas_diponiveis[5] == 'x':
         if jogadas_diponiveis[3] == 3:
             print('Computador13 jogou: {}'.format((jogadas_diponiveis[3])))
@@ -76,17 +82,20 @@ while resultado == 0:
             print('Computador13 jogou: {}'.format((jogadas_diponiveis[9])))
             jogadas_diponiveis[9] = 'o'
             VERIFICA_SE_O_COMPUTADOR_JOGOU += 1
+
     elif jogadas_diponiveis[1] == 'x' or jogadas_diponiveis[3] == 'x' or jogadas_diponiveis[7] == 'x' or jogadas_diponiveis[9] == 'x':
         if jogadas_diponiveis[5] == 5:
             print('Computador13 jogou: {}'.format((jogadas_diponiveis[5])))
             jogadas_diponiveis[5] = 'o'
             VERIFICA_SE_O_COMPUTADOR_JOGOU += 1
+
     if VERIFICA_SE_O_COMPUTADOR_JOGOU == 0:
         while True:
             JOGADA_DO_COMPUTADOR = jogadas_diponiveis[random.randint(1, (len(jogadas_diponiveis)) - 1)]
-            if JOGADA_DO_COMPUTADOR.isnumeric() == True:
+            if JOGADA_DO_COMPUTADOR != 'x' and JOGADA_DO_COMPUTADOR != 'o':
                 print('Computador13 jogou: {}'.format(int(jogadas_diponiveis[JOGADA_DO_COMPUTADOR])))
                 jogadas_diponiveis[JOGADA_DO_COMPUTADOR] = 'o'
                 break
+
     VERIFICA_SE_O_COMPUTADOR_JOGOU = 0
 jogo(empate, resultado)
