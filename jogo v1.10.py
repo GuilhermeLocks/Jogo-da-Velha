@@ -8,7 +8,9 @@ jogadas_diponiveis = ['x', 1, 2, 3, 4, 5, 6, 7, 8, 9]
 JOGADAS_DISPONIVEIS = ['x', 1, 2, 3, 4, 5, 6, 7, 8, 9]
 PRIMEIRA_OPCAO_DE_JOGADA = [1, 3, 7, 9]
 SEGUNDA_OPCAO_DE_JOGADA = [1, 3, 7, 9]
+
 import random
+
 def jogo(EMPATE, RESULTADO):
     print('''------------------------------\n        JOGO DA VELHA          \n------------------------------\n\n        {}  |  {}  |  {}
       ------------------\n        {}  |  {}  |  {}\n      ------------------\n        {}  |  {}  |  {}\n\n------------------------------
@@ -21,7 +23,6 @@ while RESULTADO == 0:
     for c in range(0, 10):
         if c != JOGADAS_DISPONIVEIS[c]:
             EMPATE += 1
-        # print('EMPATE =', EMPATE)
         if EMPATE == 9:
             RESULTADO = 'EMPATE'
     EMPATE = 0
@@ -33,7 +34,6 @@ while RESULTADO == 0:
         print('jogo empatado')
 
     jogo(EMPATE, RESULTADO)
-    # print(1)
 
     while True:
         jogada = input('Qual sua jogada? ')
@@ -49,29 +49,22 @@ while RESULTADO == 0:
             print('Jogada invalida tente novamente')
 
     jogo(EMPATE, RESULTADO)
-   # print(2)
 
     for c in JOGADA_PARA_O_COMPUTADOR_GANHAR:
-        #print('erro1')
         if JOGADAS_DISPONIVEIS[lista_1[c]] == JOGADAS_DISPONIVEIS[lista_2[c]] == 'o' and JOGADAS_DISPONIVEIS[lista_3[c]] != 'o' and JOGADAS_DISPONIVEIS[lista_3[c]] != 'x' and VERIFICA_SE_O_COMPUTADOR_JOGOU == 0:
             print('Computador11 jogou: {}'.format(JOGADAS_DISPONIVEIS[lista_3[c]]))
-            #print('erro2')
             JOGADAS_DISPONIVEIS[lista_3[c]] = 'o'
             RESULTADO = 'computador_ganhou'
             VERIFICA_SE_O_COMPUTADOR_JOGOU += 1
 
     for c in JOGADA_PARA_O_COMPUTADOR_NAO_PERDER:
-        #print('erro3')
         if JOGADAS_DISPONIVEIS[lista_1[c]] == JOGADAS_DISPONIVEIS[lista_2[c]] == 'x' and JOGADAS_DISPONIVEIS[lista_3[c]] != 'o' and JOGADAS_DISPONIVEIS[lista_3[c]] != 'x' and VERIFICA_SE_O_COMPUTADOR_JOGOU == 0:
             print('Computador12 jogou: {}'.format((JOGADAS_DISPONIVEIS[lista_3[c]])))
-           # print('erro4')
             JOGADAS_DISPONIVEIS[lista_3[c]] = 'o'
             VERIFICA_SE_O_COMPUTADOR_JOGOU += 1
 
     for c in PRIMEIRA_OPCAO_DE_JOGADA:
-       # print('erro5')
         if VERIFICA_SE_O_COMPUTADOR_JOGOU == 0 and JOGADAS_DISPONIVEIS[5] == 'x':
-           #print('erro5')
             if JOGADAS_DISPONIVEIS[c] == c:
                 print('Computador13 jogou: {}'.format((JOGADAS_DISPONIVEIS[3])))
                 print('erro6')
@@ -79,25 +72,21 @@ while RESULTADO == 0:
                 VERIFICA_SE_O_COMPUTADOR_JOGOU += 1
 
     for c in SEGUNDA_OPCAO_DE_JOGADA:
-       # print('erro7')
         if VERIFICA_SE_O_COMPUTADOR_JOGOU == 0 and JOGADAS_DISPONIVEIS[5] != 'x' and JOGADAS_DISPONIVEIS[5] != 'o':
             print('Computador14 jogou: {}'.format((JOGADAS_DISPONIVEIS[5])))
-            #print('erro8')
             JOGADAS_DISPONIVEIS[5] = 'o'
             VERIFICA_SE_O_COMPUTADOR_JOGOU += 1
 
     if VERIFICA_SE_O_COMPUTADOR_JOGOU == 0:
-       # print('erro9')
         while True:
-            #print('erro10')
             JOGADA_DO_COMPUTADOR = JOGADAS_DISPONIVEIS[random.randint(1, (len(JOGADAS_DISPONIVEIS)) - 1)]
             if RESULTADO == 'EMPATE':
                 break
             if JOGADA_DO_COMPUTADOR != 'x' and JOGADA_DO_COMPUTADOR != 'o':
-                #print('erro11')
                 print('Computador13 jogou: {}'.format(int(JOGADAS_DISPONIVEIS[JOGADA_DO_COMPUTADOR])))
                 JOGADAS_DISPONIVEIS[JOGADA_DO_COMPUTADOR] = 'o'
                 break
+
     VERIFICA_SE_O_COMPUTADOR_JOGOU = 0
+
 jogo(EMPATE, RESULTADO)
-#print(3)
