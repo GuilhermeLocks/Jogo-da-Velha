@@ -17,9 +17,6 @@ def jogo(EMPATE, RESULTADO):
 '''.format(JOGADAS_DISPONIVEIS[1], JOGADAS_DISPONIVEIS[2], JOGADAS_DISPONIVEIS[3], JOGADAS_DISPONIVEIS[4],
 JOGADAS_DISPONIVEIS[5], JOGADAS_DISPONIVEIS[6] ,JOGADAS_DISPONIVEIS[7] ,JOGADAS_DISPONIVEIS[8], JOGADAS_DISPONIVEIS[9]))
 
-
-while RESULTADO == 0:
-
     for c in range(0, 10):
         if c != JOGADAS_DISPONIVEIS[c]:
             EMPATE += 1
@@ -32,6 +29,11 @@ while RESULTADO == 0:
         print('jogo perdido')
     if RESULTADO == 'EMPATE':
         print('jogo empatado')
+    return RESULTADO
+
+while RESULTADO == 0:
+
+    RESULTADO = jogo(EMPATE, RESULTADO)
 
     jogo(EMPATE, RESULTADO)
 
