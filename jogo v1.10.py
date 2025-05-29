@@ -11,7 +11,7 @@ SEGUNDA_OPCAO_DE_JOGADA = [1, 3, 7, 9]
 
 import random
 
-def jogo(EMPATE, RESULTADO):
+def jogo(EMPATE=0, RESULTADO=0):
     print('''------------------------------\n        JOGO DA VELHA          \n------------------------------\n\n        {}  |  {}  |  {}
       ------------------\n        {}  |  {}  |  {}\n      ------------------\n        {}  |  {}  |  {}\n\n------------------------------
 '''.format(JOGADAS_DISPONIVEIS[1], JOGADAS_DISPONIVEIS[2], JOGADAS_DISPONIVEIS[3], JOGADAS_DISPONIVEIS[4],
@@ -35,7 +35,7 @@ while RESULTADO == 0:
 
     RESULTADO = jogo(EMPATE, RESULTADO)
 
-    jogo(EMPATE, RESULTADO)
+    jogo()
 
     while True:
         jogada = input('Qual sua jogada? ')
@@ -50,7 +50,7 @@ while RESULTADO == 0:
         else:
             print('Jogada invalida tente novamente')
 
-    jogo(EMPATE, RESULTADO)
+    jogo()
 
     for c in JOGADA_PARA_O_COMPUTADOR_GANHAR:
         if JOGADAS_DISPONIVEIS[lista_1[c]] == JOGADAS_DISPONIVEIS[lista_2[c]] == 'o' and JOGADAS_DISPONIVEIS[lista_3[c]] != 'o' and JOGADAS_DISPONIVEIS[lista_3[c]] != 'x' and VERIFICA_SE_O_COMPUTADOR_JOGOU == 0:
