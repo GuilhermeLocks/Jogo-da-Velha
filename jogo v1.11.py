@@ -10,7 +10,7 @@ jogadas_diponiveis = ['x', 1, 2, 3, 4, 5, 6, 7, 8, 9]
 JOGADAS_DISPONIVEIS = ['x', 1, 2, 3, 4, 5, 6, 7, 8, 9]
 PRIMEIRA_OPCAO_DE_JOGADA = [1, 3, 7, 9]
 SEGUNDA_OPCAO_DE_JOGADA = [1, 3, 7, 9]
-
+RESULTADO = EMPATE = 0
 
 def jogo(EMPATE=0, RESULTADO=0):
     print('''------------------------------\n        JOGO DA VELHA          \n------------------------------\n\n        {}  |  {}  |  {}
@@ -18,23 +18,9 @@ def jogo(EMPATE=0, RESULTADO=0):
 '''.format(JOGADAS_DISPONIVEIS[1], JOGADAS_DISPONIVEIS[2], JOGADAS_DISPONIVEIS[3], JOGADAS_DISPONIVEIS[4],
 JOGADAS_DISPONIVEIS[5], JOGADAS_DISPONIVEIS[6] ,JOGADAS_DISPONIVEIS[7] ,JOGADAS_DISPONIVEIS[8], JOGADAS_DISPONIVEIS[9]))
 
-    for c in range(0, 10):
-        if c != JOGADAS_DISPONIVEIS[c]:
-            EMPATE += 1
-        if EMPATE == 9:
-            RESULTADO = 'EMPATE'
-    EMPATE = 0
-    if RESULTADO == 'jogador_ganhou':
-        print('jogo ganho')
-    if RESULTADO == 'computador_ganhou':
-        print('jogo perdido')
-    if RESULTADO == 'EMPATE':
-        print('jogo empatado')
-    return RESULTADO
+while True:
 
-while RESULTADO == 0:
-
-    RESULTADO = jogo(EMPATE, RESULTADO)
+    VERIFICA_SE_O_COMPUTADOR_JOGOU = 0
 
     jogo()
 
@@ -51,7 +37,45 @@ while RESULTADO == 0:
         else:
             print('Jogada invalida tente novamente')
 
-    jogo()
+    for c in range(0, 24):
+
+        if JOGADAS_DISPONIVEIS[lista_1[c]] == 'x' and JOGADAS_DISPONIVEIS[lista_2[c]] == 'x' and JOGADAS_DISPONIVEIS[
+            lista_3[c]] == 'x':
+            JOGADAS_DISPONIVEIS[lista_1[c]] = '\033[0;32mx\033[m'
+            JOGADAS_DISPONIVEIS[lista_2[c]] = '\033[0;32mx\033[m'
+            JOGADAS_DISPONIVEIS[lista_3[c]] = '\033[0;32mx\033[m'
+            RESULTADO = 'jogador_ganhou'
+
+        if JOGADAS_DISPONIVEIS[lista_1[c]] == 'o' and JOGADAS_DISPONIVEIS[lista_2[c]] == 'o' and JOGADAS_DISPONIVEIS[
+            lista_3[c]] == 'o':
+            JOGADAS_DISPONIVEIS[lista_1[c]] = '\033[0;32mo\033[m'
+            JOGADAS_DISPONIVEIS[lista_2[c]] = '\033[0;32mo\033[m'
+            JOGADAS_DISPONIVEIS[lista_3[c]] = '\033[0;32mo\033[m'
+            RESULTADO = 'computador_ganhou'
+
+    for c in JOGADAS_DISPONIVEIS:
+
+        try:
+            int(c)
+        except:
+            EMPATE += 1
+
+    if EMPATE == 10:
+        RESULTADO = 'EMPATE'
+    else:
+        EMPATE = 0
+
+    if RESULTADO == 'jogador_ganhou':
+        print('jogo ganho')
+        break
+    if RESULTADO == 'computador_ganhou':
+        print('jogo perdido')
+        break
+    if RESULTADO == 'EMPATE':
+        print('jogo empatado')
+        break
+
+
 
     for c in JOGADA_PARA_O_COMPUTADOR_GANHAR:
         if JOGADAS_DISPONIVEIS[lista_1[c]] == JOGADAS_DISPONIVEIS[lista_2[c]] == 'o' and JOGADAS_DISPONIVEIS[lista_3[c]] != 'o' and JOGADAS_DISPONIVEIS[lista_3[c]] != 'x' and VERIFICA_SE_O_COMPUTADOR_JOGOU == 0:
@@ -90,6 +114,4 @@ while RESULTADO == 0:
                 JOGADAS_DISPONIVEIS[JOGADA_DO_COMPUTADOR] = 'o'
                 break
 
-    VERIFICA_SE_O_COMPUTADOR_JOGOU = 0
-
-jogo(EMPATE, RESULTADO)
+jogo()
