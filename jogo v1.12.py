@@ -1,6 +1,7 @@
 import random
 import os
 import msvcrt
+from time import sleep
 
 JOGADA_PARA_O_COMPUTADOR_NAO_PERDER = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
 JOGADA_PARA_O_COMPUTADOR_GANHAR = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
@@ -12,92 +13,142 @@ jogadas_diponiveis = ['x', 1, 2, 3, 4, 5, 6, 7, 8, 9]
 JOGADAS_DISPONIVEIS = ['x', 1, 2, 3, 4, 5, 6, 7, 8, 9]
 PRIMEIRA_OPCAO_DE_JOGADA = [1, 3, 7, 9]
 SEGUNDA_OPCAO_DE_JOGADA = [1, 3, 7, 9]
-RESULTADO = EMPATE = 0
 jogada = 0
 
-def jogo(EMPATE=0, RESULTADO=0):
+def jogo():
     os.system('cls')
     print(f'\n------------------------------'
           f'\n        JOGO DA VELHA          '
           f'\n------------------------------'
-          f'\n        {JOGADAS_DISPONIVEIS[1]}  |  {JOGADAS_DISPONIVEIS[2]}  |  {JOGADAS_DISPONIVEIS[3]}'
+          f'\n        {JOGADAS_DISPONIVEIS[7]}  |  {JOGADAS_DISPONIVEIS[8]}  |  {JOGADAS_DISPONIVEIS[9]}'
           f'\n      ------------------'
           f'\n        {JOGADAS_DISPONIVEIS[4]}  |  {JOGADAS_DISPONIVEIS[5]}  |  {JOGADAS_DISPONIVEIS[6]}'
           f'\n      ------------------'
-          f'\n        {JOGADAS_DISPONIVEIS[7]}  |  {JOGADAS_DISPONIVEIS[8]}  |  {JOGADAS_DISPONIVEIS[9]}'
+          f'\n        {JOGADAS_DISPONIVEIS[1]}  |  {JOGADAS_DISPONIVEIS[2]}  |  {JOGADAS_DISPONIVEIS[3]}'
           f'\n------------------------------'
           f'\nJogada:', end='')
 
+def verifica_ganhador():
+
+    jogo()
+
+    global jogada
+    for c in range(0, 24):
+        if JOGADAS_DISPONIVEIS[lista_3[c]] == JOGADAS_DISPONIVEIS[lista_2[c]] == JOGADAS_DISPONIVEIS[lista_1[c]] == 'o':
+            print('\nComputador Ganhou!!!')
+            jogada = 1
+            return jogada
+    for c in range(0, 24):
+        if JOGADAS_DISPONIVEIS[lista_3[c]] == JOGADAS_DISPONIVEIS[lista_2[c]] == JOGADAS_DISPONIVEIS[lista_1[c]] == 'x':
+            print('\nJogador Ganhou!!!')
+            jogada = 1
+            return jogada
+
+    # for c in range(0,24):
+    #     print(JOGADAS_DISPONIVEIS[lista_3[c]], end='  ')
+    # print()
+    # for c in range(0, 24):
+    #     print(JOGADAS_DISPONIVEIS[lista_2[c]], end='  ')
+    # print()
+    # for c in range(0, 24):
+    #     print(JOGADAS_DISPONIVEIS[lista_1[c]], end='  ')
+    # print()
+    # print()
+
 def recebe_jogada():
+
+    jogo()
+
     while True:
         if msvcrt.kbhit():  # Verifica se uma tecla foi pressionada
             key = msvcrt.getch().decode('utf-8')  # Lê a tecla e decodifica
 
             if key == '1':
                 jogada = int(key)
-                print(jogada)
+                print(jogada, end=''), sleep(0.5)
                 if jogada in JOGADAS_DISPONIVEIS:
                     JOGADAS_DISPONIVEIS.remove(jogada)
                     JOGADAS_DISPONIVEIS.insert(jogada, 'x')
                     break
+                else:
+                    jogo()
             if key == '2':
                 jogada = int(key)
-                print(jogada)
+                print(jogada, end=''), sleep(0.5)
                 if jogada in JOGADAS_DISPONIVEIS:
                     JOGADAS_DISPONIVEIS.remove(jogada)
                     JOGADAS_DISPONIVEIS.insert(jogada, 'x')
                     break
+                else:
+                    jogo()
             if key == '3':
                 jogada = int(key)
-                print(jogada)
+                print(jogada, end=''), sleep(0.5)
                 if jogada in JOGADAS_DISPONIVEIS:
                     JOGADAS_DISPONIVEIS.remove(jogada)
                     JOGADAS_DISPONIVEIS.insert(jogada, 'x')
                     break
+                else:
+                    jogo()
             if key == '4':
                 jogada = int(key)
-                print(jogada)
+                print(jogada, end=''), sleep(0.5)
                 if jogada in JOGADAS_DISPONIVEIS:
                     JOGADAS_DISPONIVEIS.remove(jogada)
                     JOGADAS_DISPONIVEIS.insert(jogada, 'x')
                     break
+                else:
+                    jogo()
             if key == '5':
                 jogada = int(key)
-                print(jogada)
+                print(jogada, end=''), sleep(0.5)
                 if jogada in JOGADAS_DISPONIVEIS:
                     JOGADAS_DISPONIVEIS.remove(jogada)
                     JOGADAS_DISPONIVEIS.insert(jogada, 'x')
                     break
+                else:
+                    jogo()
             if key == '6':
                 jogada = int(key)
-                print(jogada)
+                print(jogada, end=''), sleep(0.5)
                 if jogada in JOGADAS_DISPONIVEIS:
                     JOGADAS_DISPONIVEIS.remove(jogada)
                     JOGADAS_DISPONIVEIS.insert(jogada, 'x')
                     break
+                else:
+                    jogo()
             if key == '7':
                 jogada = int(key)
-                print(jogada)
+                print(jogada, end=''), sleep(0.5)
                 if jogada in JOGADAS_DISPONIVEIS:
                     JOGADAS_DISPONIVEIS.remove(jogada)
                     JOGADAS_DISPONIVEIS.insert(jogada, 'x')
                     break
+                else:
+                    jogo()
             if key == '8':
                 jogada = int(key)
-                print(jogada)
+                print(jogada, end=''), sleep(0.5)
                 if jogada in JOGADAS_DISPONIVEIS:
                     JOGADAS_DISPONIVEIS.remove(jogada)
                     JOGADAS_DISPONIVEIS.insert(jogada, 'x')
                     break
+                else:
+                    jogo()
             if key == '9':
                 jogada = int(key)
-                print(jogada)
+                print(jogada, end=''), sleep(0.5)
                 if jogada in JOGADAS_DISPONIVEIS:
                     JOGADAS_DISPONIVEIS.remove(jogada)
                     JOGADAS_DISPONIVEIS.insert(jogada, 'x')
                     break
+                else:
+                    jogo()
 
 def jogadas_computador():
+
+    jogo()
+
     VERIFICA_SE_O_COMPUTADOR_JOGOU = 0
 
     for c in JOGADA_PARA_O_COMPUTADOR_GANHAR:
@@ -117,7 +168,6 @@ def jogadas_computador():
         if VERIFICA_SE_O_COMPUTADOR_JOGOU == 0 and JOGADAS_DISPONIVEIS[5] == 'x':
             if JOGADAS_DISPONIVEIS[c] == c:
                 print('Computador13 jogou: {}'.format((JOGADAS_DISPONIVEIS[3])))
-                print('erro6')
                 JOGADAS_DISPONIVEIS[c] = 'o'
                 VERIFICA_SE_O_COMPUTADOR_JOGOU += 1
 
@@ -137,20 +187,12 @@ def jogadas_computador():
                 JOGADAS_DISPONIVEIS[JOGADA_DO_COMPUTADOR] = 'o'
                 break
 
-def verifica_ganhador():
-    for c in range(0, 24):
-        print(jogadas_diponiveis[lista_1[c]])
-        # if lista_1[c] == lista_2[c] == lista_3[c]:
-        #     print(lista_1[c])
-while True:
+while jogada == 0:
+
+    recebe_jogada()
 
     verifica_ganhador()
-    break
 
-    # jogo()
-    #
-    # recebe_jogada()
-    #
-    # jogo()
-    #
-    # jogadas_computador()
+    jogadas_computador()
+
+    verifica_ganhador()
