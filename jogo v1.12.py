@@ -3,16 +3,11 @@ import os
 import msvcrt
 from time import sleep
 
-JOGADA_PARA_O_COMPUTADOR_NAO_PERDER = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-JOGADA_PARA_O_COMPUTADOR_GANHAR = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-JOGADA_DO_COMPUTADOR = VERIFICA_SE_O_COMPUTADOR_JOGOU = RESULTADO = EMPATE = 0
 lista_1 = [1,1,1,1,1,1,2,2,2,3,3,3,3,4,4,4,5,5,5,5,6,7,7,8]
 lista_2 = [2,3,4,5,7,9,3,5,8,5,6,7,9,5,6,7,6,7,8,9,9,8,9,9]
 lista_3 = [3,2,7,9,4,5,1,8,5,7,9,5,6,6,5,1,4,3,2,1,3,9,8,7]
-jogadas_diponiveis = ['x', 1, 2, 3, 4, 5, 6, 7, 8, 9]
 JOGADAS_DISPONIVEIS = ['x', 1, 2, 3, 4, 5, 6, 7, 8, 9]
-PRIMEIRA_OPCAO_DE_JOGADA = [1, 3, 7, 9]
-SEGUNDA_OPCAO_DE_JOGADA = [1, 3, 7, 9]
+OPCAO_DE_JOGADA = [1, 3, 7, 9]
 jogada = 0
 
 def jogo():
@@ -151,27 +146,27 @@ def jogadas_computador():
 
     VERIFICA_SE_O_COMPUTADOR_JOGOU = 0
 
-    for c in JOGADA_PARA_O_COMPUTADOR_GANHAR:
+    for c in range(0,24):
         if JOGADAS_DISPONIVEIS[lista_1[c]] == JOGADAS_DISPONIVEIS[lista_2[c]] == 'o' and JOGADAS_DISPONIVEIS[lista_3[c]] != 'o' and JOGADAS_DISPONIVEIS[lista_3[c]] != 'x' and VERIFICA_SE_O_COMPUTADOR_JOGOU == 0:
             print('Computador11 jogou: {}'.format(JOGADAS_DISPONIVEIS[lista_3[c]]))
             JOGADAS_DISPONIVEIS[lista_3[c]] = 'o'
             # RESULTADO = 'computador_ganhou'
             VERIFICA_SE_O_COMPUTADOR_JOGOU += 1
 
-    for c in JOGADA_PARA_O_COMPUTADOR_NAO_PERDER:
+    for c in range(0,24):
         if JOGADAS_DISPONIVEIS[lista_1[c]] == JOGADAS_DISPONIVEIS[lista_2[c]] == 'x' and JOGADAS_DISPONIVEIS[lista_3[c]] != 'o' and JOGADAS_DISPONIVEIS[lista_3[c]] != 'x' and VERIFICA_SE_O_COMPUTADOR_JOGOU == 0:
             print('Computador12 jogou: {}'.format((JOGADAS_DISPONIVEIS[lista_3[c]])))
             JOGADAS_DISPONIVEIS[lista_3[c]] = 'o'
             VERIFICA_SE_O_COMPUTADOR_JOGOU += 1
 
-    for c in PRIMEIRA_OPCAO_DE_JOGADA:
+    for c in OPCAO_DE_JOGADA:
         if VERIFICA_SE_O_COMPUTADOR_JOGOU == 0 and JOGADAS_DISPONIVEIS[5] == 'x':
             if JOGADAS_DISPONIVEIS[c] == c:
                 print('Computador13 jogou: {}'.format((JOGADAS_DISPONIVEIS[3])))
                 JOGADAS_DISPONIVEIS[c] = 'o'
                 VERIFICA_SE_O_COMPUTADOR_JOGOU += 1
 
-    for c in SEGUNDA_OPCAO_DE_JOGADA:
+    for c in OPCAO_DE_JOGADA:
         if VERIFICA_SE_O_COMPUTADOR_JOGOU == 0 and JOGADAS_DISPONIVEIS[5] != 'x' and JOGADAS_DISPONIVEIS[5] != 'o':
             print('Computador14 jogou: {}'.format((JOGADAS_DISPONIVEIS[5])))
             JOGADAS_DISPONIVEIS[5] = 'o'
